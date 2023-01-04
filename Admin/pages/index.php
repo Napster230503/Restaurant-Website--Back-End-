@@ -42,7 +42,7 @@ include_once '../conection.php';
                   <thead>
                     <tr>
                       <th>No.</th>
-                      <th>Employee id</th>
+                      <th>ID</th>
                       <th>Name</th>
                       <th>address</th>
                       <th>No.Telp</th>
