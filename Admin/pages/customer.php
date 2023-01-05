@@ -1,9 +1,9 @@
 <?php
 include_once '../conection.php';
+$con = db_connect();
+$sql = "SELECT * FROM employee";
+$result = mysqli_query($con, $sql);
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,6 +50,7 @@ include_once '../conection.php';
                       <th>Address</th>
                       <th>Mail</th>
                       <th>No Telp</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <?php
@@ -67,6 +68,11 @@ include_once '../conection.php';
                       <td><?=$data['cust_address']?></td>
                       <td><?=$data['cust_mail']?></td>
                       <td><?=$data['no_tlp']?></td>
+                      <td>
+                        <a href="#" class='btn btn-primary'>Change</a>
+                        <a href="#" class='btn btn-danger'>Delete</a>
+                      </td>
+
                     </tr>
                     <?php endwhile; ?>
                   </tbody>

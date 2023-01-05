@@ -1,6 +1,8 @@
 <?php
 include_once '../conection.php';
-
+$con = db_connect();
+$sql = "SELECT * FROM menu";
+$result = mysqli_query($con, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -42,12 +44,13 @@ include_once '../conection.php';
                 <table id="datatablesSimple">
                   <thead>
                     <tr>
-                      <th>No.</th>
-                      <th>Menu id</th>
-                      <th>Menu name</th>
-                      <th>category id</th>
-                      <th>price</th>
-                      <th>qty</th>
+                      <th>No</th>
+                      <th>ID</th>
+                      <th>Menu</th>
+                      <th>Category id</th>
+                      <th>Price</th>
+                      <th>Qty</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <?php
@@ -59,12 +62,16 @@ include_once '../conection.php';
                   ?>
                   <tbody>
                     <tr>
-                      <td><?=$no++?></td>
-                      <td><?=$data['menu_id']?></td>
-                      <td><?=$data['menu_name']?></td>
-                      <td><?=$data['category_id']?></td>
-                      <td><?=$data['price']?></td>
-                      <td><?=$data['qty']?></td>
+                        <td><?php echo $no++;?></td>
+                        <td><?php echo $data['menu_id'];?></td>
+                        <td><?php echo $data['menu_name'];?></td>
+                        <td><?php echo $data['category_id'];?></td>
+                        <td><?php echo $data['price']; ?></td>
+                        <td><?php echo $data['qty']; ?></td>
+                      <td>
+                        <a href="#" class='btn btn-primary'>Change</a>
+                        <a href="#" class='btn btn-danger'>Delete</a>
+                      </td>
                     </tr>
                     <?php endwhile; ?>
                   </tbody>
@@ -87,3 +94,6 @@ include_once '../conection.php';
     <script src="../resource/js/datatables-simple-demo.js"></script>
   </body>
 </html>
+<?php
+db_disconnect($con);
+?>
