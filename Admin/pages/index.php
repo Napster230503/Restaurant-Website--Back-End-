@@ -2,19 +2,9 @@
 include_once '../conection.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Dashboard - FS Resto</title>
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="../resource/css/styles.css" rel="stylesheet" />
-    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-  </head>
+<?php
+  include_once 'partIndex/header.php';
+?>
   <body class="sb-nav-fixed">
    <?=
       include 'partIndex/navbar.php';
@@ -22,7 +12,7 @@ include_once '../conection.php';
     <div id="layoutSidenav">
       <div id="layoutSidenav_nav">
        <?=
-        include 'partIndex/sideNavbar.php';
+        include 'sideNavbar.php';
        ?>
       </div>
       <div id="layoutSidenav_content">
@@ -64,13 +54,16 @@ include_once '../conection.php';
                       <td><?=$data['emp_address']?></td>
                       <td><?=$data['no_tlp']?></td>
                       <td>
-                        <a href="#" class='btn btn-primary'>Edit</a>
-                        <a href="#" class='btn btn-danger'>Hapus</a>
+                        <a href="update.php" class='btn btn-primary'>Edit</a>
+                        <a href="delete.php" class='btn btn-danger'>Hapus</a>
+                       <a href="show.php"><i class='fa fa-eye'></i></a>
                       </td>
                     </tr>
                     <?php endwhile; ?>
                   </tbody>
                 </table>
+                <!-- mysql_real_escape_string('$_post['nama field input']') -->
+                <!-- trim() buat hapus spasi sebelah kiri -->
               </div>
             </div>
           </div>
@@ -80,12 +73,8 @@ include_once '../conection.php';
        ?>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="../resource/js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="../resource/assets/demo/chart-area-demo.js"></script>
-    <script src="../resource/assets/demo/chart-bar-demo.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="../resource/js/datatables-simple-demo.js"></script>
+    <?=
+      include_once 'partIndex/script.php';
+    ?>
   </body>
 </html>
