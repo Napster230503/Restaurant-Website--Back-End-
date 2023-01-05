@@ -41,12 +41,12 @@ include_once '../conection.php';
                 <table id="datatablesSimple">
                   <thead>
                     <tr>
-                      <th>No.</th>
+                      <th>No</th>
                       <th>ID</th>
                       <th>Name</th>
                       <th>address</th>
                       <th>No.Telp</th>
-                      <th>Aksi</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <?php
@@ -64,8 +64,8 @@ include_once '../conection.php';
                       <td><?=$data['emp_address']?></td>
                       <td><?=$data['no_tlp']?></td>
                       <td>
-                        <a href="#" class='btn btn-primary'>Edit</a>
-                        <a href="#" class='btn btn-danger'>Hapus</a>
+                        <a href="#" class='btn btn-primary'>Change</a>
+                        <a href="#" class='btn btn-danger'>Delete</a>
                       </td>
                     </tr>
                     <?php endwhile; ?>

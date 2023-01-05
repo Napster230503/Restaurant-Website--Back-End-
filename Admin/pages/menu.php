@@ -45,9 +45,10 @@ include_once '../conection.php';
                       <th>No.</th>
                       <th>Menu id</th>
                       <th>Menu name</th>
-                      <th>category id</th>
-                      <th>price</th>
-                      <th>qty</th>
+                      <th>Category id</th>
+                      <th>Price</th>
+                      <th>Qty</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <?php
@@ -65,6 +66,10 @@ include_once '../conection.php';
                       <td><?=$data['category_id']?></td>
                       <td><?=$data['price']?></td>
                       <td><?=$data['qty']?></td>
+                      <td>
+                        <a href="#" class='btn btn-primary'>Change</a>
+                        <a href="#" class='btn btn-danger'>Delete</a>
+                      </td>
                     </tr>
                     <?php endwhile; ?>
                   </tbody>
