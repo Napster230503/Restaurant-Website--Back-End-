@@ -1,9 +1,9 @@
 <?php
 include_once '../conection.php';
+$con = db_connect();
+$sql = "SELECT * FROM employee";
+$result = mysqli_query($con, $sql);
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>

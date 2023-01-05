@@ -1,7 +1,9 @@
 <?php
 include_once '../conection.php';
+$con = db_connect();
+$sql = "SELECT * FROM employee";
+$result = mysqli_query($con, $sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,8 +46,8 @@ include_once '../conection.php';
                       <th>No</th>
                       <th>ID</th>
                       <th>Name</th>
-                      <th>address</th>
-                      <th>No.Telp</th>
+                      <th>Address</th>
+                      <th>No Tlp</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -58,11 +60,11 @@ include_once '../conection.php';
                   ?>
                   <tbody>
                     <tr>
-                      <td><?=$no++?></td>
-                      <td><?=$data['emp_id']?></td>
-                      <td><?=$data['emp_name']?></td>
-                      <td><?=$data['emp_address']?></td>
-                      <td><?=$data['no_tlp']?></td>
+                        <td><?php echo $no++;?></td>
+                        <td><?php echo $data['emp_id'];?></td>
+                        <td><?php echo $data['emp_name'];?></td>
+                        <td><?php echo $data['emp_address'];?></td>
+                        <td><?php echo $data['no_tlp']; ?></td>
                       <td>
                         <a href="#" class='btn btn-primary'>Change</a>
                         <a href="#" class='btn btn-danger'>Delete</a>
@@ -89,3 +91,6 @@ include_once '../conection.php';
     <script src="../resource/js/datatables-simple-demo.js"></script>
   </body>
 </html>
+<?php
+db_disconnect($con);
+?>
