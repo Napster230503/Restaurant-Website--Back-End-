@@ -46,6 +46,7 @@ include_once '../conection.php';
                       <th>Name</th>
                       <th>address</th>
                       <th>No.Telp</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <?php
@@ -62,6 +63,10 @@ include_once '../conection.php';
                       <td><?=$data['emp_name']?></td>
                       <td><?=$data['emp_address']?></td>
                       <td><?=$data['no_tlp']?></td>
+                      <td>
+                        <a href="#" class='btn btn-primary'>Edit</a>
+                        <a href="#" class='btn btn-danger'>Hapus</a>
+                      </td>
                     </tr>
                     <?php endwhile; ?>
                   </tbody>
