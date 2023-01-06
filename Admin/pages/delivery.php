@@ -15,7 +15,7 @@ $result = mysqli_query($con, $sql);
     <meta name="author" content="" />
     <title>Dashboard - FS Resto</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="../resource/css/styles.css" rel="stylesheet" />
+    <link href="../../resource/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
   </head>
 
@@ -53,6 +53,7 @@ $result = mysqli_query($con, $sql);
                       <th>Sender</th>
                     </tr>
                   </thead>
+                  <tbody>
                   <?php
                     $database = db_connect ();
 
@@ -60,7 +61,7 @@ $result = mysqli_query($con, $sql);
                     $tampil = mysqli_query($database, 'SELECT * FROM delivery order by delivery_id desc');
                     while($data = mysqli_fetch_assoc($tampil)) :   
                   ?>
-                  <tbody>
+                  
                     <tr>
                         <td><?php echo $no++;?></td>
                         <td><?php echo $data['delivery_id'];?></td>
