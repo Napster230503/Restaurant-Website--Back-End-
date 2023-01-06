@@ -36,8 +36,8 @@ require_once '../conection.php';
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Data FS RESTO
-                <a href="create.php" class="btn btn-success"> tambah Data <i class="fas fa-plus me-1"></i></a>
+                Add Employee
+                <a href="create.php" class="btn btn-success"><i class="fas fa-plus me-1"></i></a>
                 
               </div>
               <div class="card-body">

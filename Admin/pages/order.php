@@ -49,6 +49,7 @@ $result = mysqli_query($con, $sql);
                       <th>Order ID</th>
                       <th>Customer ID</th>
                       <th>Employee ID</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <?php
@@ -64,10 +65,13 @@ $result = mysqli_query($con, $sql);
                         <td><?php echo $data['order_id'];?></td>
                         <td><?php echo $data['cust_id'];?></td>
                         <td><?php echo $data['emp_id'];?></td>
+                        <td>
+                          <a href="#" class='btn btn-primary'>Change</a>
+                          <a href="#" class='btn btn-danger'>Delete</a>
+                        </td>
                       <td>
 
-                        <a href="#" class='btn btn-primary'>Change</a>
-                        <a href="#" class='btn btn-danger'>Delete</a>
+                       
 
                       </td>
                     </tr>

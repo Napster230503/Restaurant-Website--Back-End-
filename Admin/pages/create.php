@@ -40,12 +40,45 @@ $result = mysqli_query($con, $sql);
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
                 Data FS RESTO
+
+
+                <?php if (!empty($_GET["error"])): ?>
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                     <strong>Failed! </strong><?php echo $_GET["error"]; ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>    
+                <?php endif; ?>
+                   <?php if (!empty($_GET["sukses"])): ?>
+                      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                         <strong>Success! </strong><?php echo $_GET["sukses"]; ?>
+                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>                                
+                <?php endif; ?>
+
+
               </div>
               <div class="card-body">
+              <form action="processCrt.php" method="post">
               <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-              </div> NGODING KNTL >:(
+                <label for="exampleFormControlInput1" class="form-label">ID</label>
+                <input type="text" name="id" class="form-control" id="exampleFormControlInput1" placeholder="E******">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Anonymous">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Address</label>
+                <input type="text" name="address" class="form-control" id="exampleFormControlInput1" placeholder="Address">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">No Telp</label>
+                <input type="number" name="tlp" class="form-control" id="exampleFormControlInput1" placeholder="08**********">
+              </div>
+
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+              </form>
+
 
               </div>
             </div>
@@ -65,6 +98,4 @@ $result = mysqli_query($con, $sql);
 db_disconnect($con);
 ?>
 
-<?=
-  $cari = mysqli_query($database, 'SELECT * FROM employee ')
-?>
+
