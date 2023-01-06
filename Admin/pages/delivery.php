@@ -1,7 +1,7 @@
 <?php
 include_once '../conection.php';
 $con = db_connect();
-$sql = "SELECT * FROM menu";
+$sql = "SELECT * FROM employee";
 $result = mysqli_query($con, $sql);
 ?>
 
@@ -18,6 +18,7 @@ $result = mysqli_query($con, $sql);
     <link href="../resource/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
   </head>
+
   <body class="sb-nav-fixed">
    <?=
       include 'partIndex/navbar.php';
@@ -33,7 +34,7 @@ $result = mysqli_query($con, $sql);
           <div class="container-fluid px-4">
             <h1 class="mt-4">Information</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item active">Menu</li>
+              <li class="breadcrumb-item active">Delivery</li>
             </ol>
             <div class="card mb-4">
               <div class="card-header">
@@ -45,37 +46,40 @@ $result = mysqli_query($con, $sql);
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>ID</th>
-                      <th>Menu</th>
-                      <th>Category id</th>
-                      <th>Price</th>
-                      <th>Qty</th>
-                      <th>Action</th>
+                      <th>Delivery ID</th>
+                      <th>Order ID</th>
+                      <th>Receiver</th>
+                      <th>Address</th>
+                      <th>Sender</th>
                     </tr>
                   </thead>
                   <?php
                     $database = db_connect ();
 
                     $no = 1;
-                    $tampil = mysqli_query($database, 'SELECT * FROM menu order by menu_id desc');
+                    $tampil = mysqli_query($database, 'SELECT * FROM delivery order by delivery_id desc');
                     while($data = mysqli_fetch_assoc($tampil)) :   
                   ?>
                   <tbody>
                     <tr>
                         <td><?php echo $no++;?></td>
-                        <td><?php echo $data['menu_id'];?></td>
-                        <td><?php echo $data['menu_name'];?></td>
-                        <td><?php echo $data['category_id'];?></td>
-                        <td><?php echo $data['price']; ?></td>
-                        <td><?php echo $data['qty']; ?></td>
+                        <td><?php echo $data['delivery_id'];?></td>
+                        <td><?php echo $data['order_id'];?></td>
+                        <td><?php echo $data['penerima'];?></td>
+                        <td><?php echo $data['alamat_tujuan']; ?></td>
+                        <td><?php echo $data['pengirim']; ?></td>
                       <td>
+
                         <a href="#" class='btn btn-primary'>Change</a>
                         <a href="#" class='btn btn-danger'>Delete</a>
+
                       </td>
                     </tr>
                     <?php endwhile; ?>
                   </tbody>
                 </table>
+                <!-- mysql_real_escape_string('$_post['nama field input']') -->
+                <!-- trim() buat hapus spasi sebelah kiri -->
               </div>
             </div>
           </div>
@@ -85,13 +89,9 @@ $result = mysqli_query($con, $sql);
        ?>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="../resource/js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="../resource/assets/demo/chart-area-demo.js"></script>
-    <script src="../resource/assets/demo/chart-bar-demo.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="../resource/js/datatables-simple-demo.js"></script>
+    <?=
+      include_once 'partIndex/script.php';
+    ?>
   </body>
 </html>
 <?php
