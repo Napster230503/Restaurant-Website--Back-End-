@@ -35,9 +35,7 @@ require_once '../conection.php';
             </ol>
             <div class="card mb-4">
               <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                Add Employee
-                <a href="create.php" class="btn btn-success"><i class="fas fa-plus me-1"></i></a>
+                <a href="create.php" class="btn btn-success"><i class=" fas fa-plus me-1"></i>Tambah pegawai</a>
                 
               </div>
               <div class="card-body">

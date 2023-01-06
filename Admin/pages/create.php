@@ -38,10 +38,7 @@ $result = mysqli_query($con, $sql);
             </ol>
             <div class="card mb-4">
               <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                Data FS RESTO
-
-
+              <i class=" fas fa-table me-1"></i>Tambah pegawai
                 <?php if (!empty($_GET["error"])): ?>
                   <div class="alert alert-danger alert-dismissible fade show" role="alert">
                      <strong>Failed! </strong><?php echo $_GET["error"]; ?>
@@ -61,23 +58,25 @@ $result = mysqli_query($con, $sql);
               <form action="processCrt.php" method="post">
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">ID</label>
-                <input type="text" name="id" class="form-control" id="exampleFormControlInput1" placeholder="E******">
+                <input type="text" name="id" class="form-control" id="exampleFormControlInput1" placeholder="E******" required='true'>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Name</label>
-                <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Anonymous">
+                <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Anonymous" required='true'>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Address</label>
-                <input type="text" name="address" class="form-control" id="exampleFormControlInput1" placeholder="Address">
+                <input type="text" name="address" class="form-control" id="exampleFormControlInput1" placeholder="Address" required='true'>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">No Telp</label>
-                <input type="number" name="tlp" class="form-control" id="exampleFormControlInput1" placeholder="08**********">
+                <input type="number" name="tlp" class="form-control" id="exampleFormControlInput1" placeholder="08**********" required='true'>
               </div>
 
                 <input type="submit" value="Submit" class="btn btn-primary"/>
+            
               </form>
+             
 
 
               </div>
