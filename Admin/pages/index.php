@@ -37,8 +37,8 @@ require_once '../conection.php';
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
                 Data FS RESTO
-               <a href="create.php" class="btn btn-success"> <i class="fas fa-plus me-1"></i></a>
-                Data
+                <a href="create.php" class="btn btn-success"> tambah Data <i class="fas fa-plus me-1"></i></a>
+                
               </div>
               <div class="card-body">
                 <table id="datatablesSimple">
@@ -52,6 +52,7 @@ require_once '../conection.php';
                       <th>Action</th>
                     </tr>
                   </thead>
+                  <tbody>
                   <?php
                     $database = db_connect ();
 
@@ -59,7 +60,7 @@ require_once '../conection.php';
                     $tampil = mysqli_query($database, 'SELECT * FROM employee order by emp_id desc');
                     while($data = mysqli_fetch_assoc($tampil)) :   
                   ?>
-                  <tbody>
+                  
                     <tr>
                         <td><?php echo $no++;?></td>
                         <td><?php echo $data['emp_id'];?></td>
@@ -93,5 +94,5 @@ require_once '../conection.php';
   </body>
 </html>
 <?php
-db_disconnect($con);
+db_disconnect($database);
 ?>

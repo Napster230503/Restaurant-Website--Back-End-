@@ -34,19 +34,16 @@ $result = mysqli_query($con, $sql);
           <div class="container-fluid px-4">
             <h1 class="mt-4">Dashboard</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item active">Employee</li>
+              <li class="breadcrumb-item active">Add Employee</li>
             </ol>
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
                 Data FS RESTO
-               <a href="create.php" class="btn btn-success"> <i class="fas fa-plus me-1"></i></a>
-                Data
               </div>
               <div class="card-body">
-                
-                <!-- mysql_real_escape_string('$_post['nama field input']') -->
-                <!-- trim() buat hapus spasi sebelah kiri -->
+                  
+
               </div>
             </div>
           </div>
