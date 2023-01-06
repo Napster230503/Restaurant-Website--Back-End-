@@ -1,5 +1,8 @@
 <?php
-require_once '../conection.php';
+include_once '../conection.php';
+$con = db_connect();
+$sql = "SELECT * FROM employee";
+$result = mysqli_query($con, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +32,7 @@ require_once '../conection.php';
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Information</h1>
+            <h1 class="mt-4">Dashboard</h1>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item active">Employee</li>
             </ol>
@@ -41,42 +44,8 @@ require_once '../conection.php';
                 Data
               </div>
               <div class="card-body">
-                <table id="datatablesSimple">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>Address</th>
-                      <th>No Tlp</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <?php
-                    $database = db_connect ();
-
-                    $no = 1;
-                    $tampil = mysqli_query($database, 'SELECT * FROM employee order by emp_id desc');
-                    while($data = mysqli_fetch_assoc($tampil)) :   
-                  ?>
-                  <tbody>
-                    <tr>
-                        <td><?php echo $no++;?></td>
-                        <td><?php echo $data['emp_id'];?></td>
-                        <td><?php echo $data['emp_name'];?></td>
-                        <td><?php echo $data['emp_address'];?></td>
-                        <td><?php echo $data['no_tlp']; ?></td>
-                      <td>
-                        <a href="#"><i class="fa fa-eye me-3"></i></a>
-                        <a href="#" class='btn btn-primary'>Change</a>
-                        <a href="#" class='btn btn-danger'>Delete</a>
-
-                      </td>
-                    </tr>
-                    <?php endwhile; ?>
-                  </tbody>
-                </table>
-                <!-- mysqli_real_escape_string('$_post['nama field input']') -->
+                
+                <!-- mysql_real_escape_string('$_post['nama field input']') -->
                 <!-- trim() buat hapus spasi sebelah kiri -->
               </div>
             </div>
@@ -94,4 +63,8 @@ require_once '../conection.php';
 </html>
 <?php
 db_disconnect($con);
+?>
+
+<?=
+  $cari = mysqli_query($database, 'SELECT * FROM employee ')
 ?>
