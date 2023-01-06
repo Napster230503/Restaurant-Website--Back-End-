@@ -10,6 +10,14 @@
                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                 Customer
               </a>
+              <a class="nav-link" href="delivery.php">
+                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                Delivery
+              </a>
+              <a class="nav-link" href="order.php">
+                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                Order
+              </a>
               <br>
 
               <div class="sb-sidenav-menu-heading">Our Menu</div>

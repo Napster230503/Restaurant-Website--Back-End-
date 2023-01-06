@@ -34,7 +34,7 @@ $result = mysqli_query($con, $sql);
           <div class="container-fluid px-4">
             <h1 class="mt-4">Information</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item active">Employee</li>
+              <li class="breadcrumb-item active">Delivery</li>
             </ol>
             <div class="card mb-4">
               <div class="card-header">
@@ -46,27 +46,28 @@ $result = mysqli_query($con, $sql);
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>ID</th>
-                      <th>Name</th>
+                      <th>Delivery ID</th>
+                      <th>Order ID</th>
+                      <th>Receiver</th>
                       <th>Address</th>
-                      <th>No Tlp</th>
-                      <th>Action</th>
+                      <th>Sender</th>
                     </tr>
                   </thead>
                   <?php
                     $database = db_connect ();
 
                     $no = 1;
-                    $tampil = mysqli_query($database, 'SELECT * FROM employee order by emp_id desc');
+                    $tampil = mysqli_query($database, 'SELECT * FROM delivery order by delivery_id desc');
                     while($data = mysqli_fetch_assoc($tampil)) :   
                   ?>
                   <tbody>
                     <tr>
                         <td><?php echo $no++;?></td>
-                        <td><?php echo $data['emp_id'];?></td>
-                        <td><?php echo $data['emp_name'];?></td>
-                        <td><?php echo $data['emp_address'];?></td>
-                        <td><?php echo $data['no_tlp']; ?></td>
+                        <td><?php echo $data['delivery_id'];?></td>
+                        <td><?php echo $data['order_id'];?></td>
+                        <td><?php echo $data['penerima'];?></td>
+                        <td><?php echo $data['alamat_tujuan']; ?></td>
+                        <td><?php echo $data['pengirim']; ?></td>
                       <td>
 
                         <a href="#" class='btn btn-primary'>Change</a>
