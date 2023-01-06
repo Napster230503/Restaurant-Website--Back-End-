@@ -25,7 +25,7 @@ $result = mysqli_query($con, $sql);
     <div id="layoutSidenav">
       <div id="layoutSidenav_nav">
        <?=
-        include 'partIndex/sideNavbar.php';
+        include 'sideNavbar.php';
        ?>
       </div>
       <div id="layoutSidenav_content">
