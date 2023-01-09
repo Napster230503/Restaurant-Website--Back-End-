@@ -19,6 +19,7 @@ require_once '../conection.php';
    <?=
       include 'partIndex/navbar.php';
    ?>
+
     <div id="layoutSidenav">
       <div id="layoutSidenav_nav">
        <?=
@@ -65,9 +66,9 @@ require_once '../conection.php';
                         <td><?php echo $data['emp_address'];?></td>
                         <td><?php echo $data['no_tlp']; ?></td>
                       <td>
-                        <a href="#"><i class="fa fa-eye me-3"></i></a>
-                        <a href="update.php" class='btn btn-primary'>Change</a>
-                        <a href="#" class='btn btn-danger'>Delete</a>
+                        <a href="show.php?id=<?php echo $data['emp_id']; ?>"><i class="fa fa-eye me-3"></i></a>
+                        <a href="update.php?id=<?php echo $data['emp_id']; ?>" class='btn btn-primary'>Change</a>
+                        <a href="delete.php?id=<?php echo $data['emp_id']; ?>" class='btn btn-danger'>Delete</a>
 
                       </td>
                     </tr>
