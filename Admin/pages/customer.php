@@ -63,12 +63,12 @@ $result = mysqli_query($con, $sql);
                   ?>
                   
                     <tr>
-                      <td><?=$no++?></td>
-                      <td><?=$data['cust_id']?></td>
-                      <td><?=$data['cust_name']?></td>
-                      <td><?=$data['cust_address']?></td>
-                      <td><?=$data['cust_mail']?></td>
-                      <td><?=$data['no_tlp']?></td>
+                    <td><?php echo $no++;?></td>
+                        <td><?php echo $data['cust_id'];?></td>
+                        <td><?php echo $data['cust_name'];?></td>
+                        <td><?php echo $data['cust_address'];?></td>
+                        <td><?php echo $data['cust_mail']; ?></td>
+                        <td><?php echo $data['no_tlp']; ?></td>
                       <td>
                       <a href="show_cust.php?id=<?php echo $data['cust_id']; ?>"><i class="fa fa-eye me-3"></i></a>
                         <a href="update_cust.php" class='btn btn-primary'>Change</a>
