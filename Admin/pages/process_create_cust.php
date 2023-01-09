@@ -5,8 +5,8 @@ $con = db_connect();
 $id = mysqli_real_escape_string($con, $_POST["id"]);
 $name = mysqli_real_escape_string($con, $_POST["name"]);
 $address = mysqli_real_escape_string($con, $_POST["address"]);
-$mail = mysqli_real_escape_string($con, $POST["mail"])
-$tlp = mysqli_real_escape_string($con, $_POST["tlp"]);
+$mail = mysqli_real_escape_string($con, $_POST["mail"]);
+$telp = mysqli_real_escape_string($con, $_POST["telp"]);
 
 // Melakukan validasi terhadap data
 if (empty($id)) {
