@@ -1,7 +1,6 @@
 <?php
 require_once '../conection.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -67,7 +66,7 @@ require_once '../conection.php';
                         <td><?php echo $data['no_tlp']; ?></td>
                       <td>
                         <a href="#"><i class="fa fa-eye me-3"></i></a>
-                        <a href="#" class='btn btn-primary'>Change</a>
+                        <a href="update.php" class='btn btn-primary'>Change</a>
                         <a href="#" class='btn btn-danger'>Delete</a>
 
                       </td>

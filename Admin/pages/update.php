@@ -1,10 +1,11 @@
 <?php
 require_once "../conection.php";
 $con = db_connect();
-$id = mysqli_real_escape_string($con, $_GET["id"]);
-$sql = "SELECT * FROM employee WHERE emp_id = '$code'";
+$id = mysqli_real_escape_string($con, $_GET["emp_id"]);
+$sql = "SELECT * FROM employee WHERE emp_id = '$id'";
 $result = mysqli_query($con, $sql);
 while($data = mysqli_fetch_assoc($result)) {
+
     $name = $data['emp_name'];
     $address = $data['emp_address'];
     $tlp = $data['no_tlp'];
@@ -12,11 +13,21 @@ while($data = mysqli_fetch_assoc($result)) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php include('../includes/head.php');?>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - FS Resto</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="../../resource/css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  </head>
     <body class="sb-nav-fixed">
-        <?php include('../includes/navigasi.php');?>
+        <?php include('sideNavbar.php');?>
         <div id="layoutSidenav">
-           <?php include('../includes/menu.php');?>
+           <?php include('../pages/menu.php');?>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -67,10 +78,10 @@ while($data = mysqli_fetch_assoc($result)) {
                     </div>
                     </div>
                 </main>
-                <?php include('../includes/footer.php');?>
+                <?php include('../pages/partIndex/footer.php');?>
             </div>
         </div>
-        <?php include('../includes/scripts.php');?>
+        <?php include('../pages/partIndex/script.php');?>
     </body>
 </html>
 <?php
