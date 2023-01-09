@@ -69,7 +69,7 @@ while($data = mysqli_fetch_assoc($result)) {
                       <div class="mb-3 row">
                         <label for="name" class="col-sm-2 col-form-label">Address</label>
                         <div class="col-sm-10">
-                          <textarea class="form-control" id="address" name="address" placeholder="..." required="true" value="<?php echo $address; ?>"></textarea>
+                          <textarea class="form-control" id="address" name="address" placeholder="..." required="true"><?php echo $address; ?></textarea>
                         </div>
                       </div>
 
