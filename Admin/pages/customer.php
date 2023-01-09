@@ -38,8 +38,7 @@ $result = mysqli_query($con, $sql);
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                <a href="create.php" class="btn btn-success"><i class=" fas fa-plus me-1"></i>Add Customer</a>
-                Data FS RESTO
+                <a href="create_cust.php" class="btn btn-success"><i class=" fas fa-plus me-1"></i>Add Customer</a>
               </div>
               <div class="card-body">
                 <table id="datatablesSimple">
