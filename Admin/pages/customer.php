@@ -70,8 +70,9 @@ $result = mysqli_query($con, $sql);
                       <td><?=$data['cust_mail']?></td>
                       <td><?=$data['no_tlp']?></td>
                       <td>
-                        <a href="#" class='btn btn-primary'>Change</a>
-                        <a href="#" class='btn btn-danger'>Delete</a>
+                      <a href="show_cust.php?id=<?php echo $data['cust_id']; ?>"><i class="fa fa-eye me-3"></i></a>
+                        <a href="update_cust.php" class='btn btn-primary'>Change</a>
+                        <a href="delete_cust.php" class='btn btn-danger'>Delete</a>
                       </td>
 
                     </tr>
