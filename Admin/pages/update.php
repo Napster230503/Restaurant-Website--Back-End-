@@ -45,7 +45,7 @@ while($data = mysqli_fetch_assoc($result)) {
             </ol>
             <div class="card mb-4">
               <div class="card-header">
-                <a href="create.php" class="btn btn-success"><i class=" fas fa-plus me-1"></i>Tambah pegawai</a>
+                <p>Employee Update</p>
                 
               </div>
               <div class="card-body">
