@@ -49,7 +49,7 @@ while($data = mysqli_fetch_assoc($result)) {
                 
               </div>
               <div class="card-body">
-              <form id="frmemp" method="post" action="proses_update.php">
+              <form id="frmemp" method="post" action="process_update.php">
                 <fieldset>
 
                     <div class="mb-3 row">
