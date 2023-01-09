@@ -33,11 +33,20 @@ require_once '../conection.php';
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item active">Employee</li>
             </ol>
+            <div class="mt-2">
+              <?php if (!empty($_GET["success"])): ?>
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <strong>Success! </strong><?php echo $_GET["success"]; ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>                                
+                            <?php endif; ?>
+              </div>
             <div class="card mb-4">
               <div class="card-header">
                 <a href="create.php" class="btn btn-success"><i class=" fas fa-plus me-1"></i>Tambah pegawai</a>
                 
               </div>
+
               <div class="card-body">
                 <table id="datatablesSimple">
                   <thead>

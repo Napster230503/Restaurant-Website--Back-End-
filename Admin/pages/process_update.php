@@ -28,11 +28,11 @@ if (!is_numeric($tlp)) {
 
  
 // Membuat dan menjalankan query
-$sql = "UPDATE employee SET emp_name='$name', emp_address='$address', tlp='$tlp' WHERE emp_id='$id'";
+$sql = "UPDATE employee SET emp_name='$name', emp_address='$address', no_tlp='$tlp' WHERE emp_id='$id'";
 mysqli_query($con, $sql);
 // Menutup koneksi
 db_disconnect($con);
-header("Location: ../../index.php?success=Data Updated Successfully!");
+header("Location: index.php?success=Data Updated Successfully!");
 ?>
 
 
