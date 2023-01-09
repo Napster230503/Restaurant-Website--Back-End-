@@ -43,7 +43,7 @@ require_once '../conection.php';
               </div>
             <div class="card mb-4">
               <div class="card-header">
-                <a href="create.php" class="btn btn-success"><i class=" fas fa-plus me-1"></i>Tambah pegawai</a>
+                <a href="create.php" class="btn btn-success"><i class=" fas fa-plus me-1"></i>Add Employee</a>
                 
               </div>
 
