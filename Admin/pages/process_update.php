@@ -40,5 +40,5 @@ $sql = $sql . "WHERE EmpCode = '$code'";
 mysqli_query($con, $sql);
 // Menutup koneksi
 db_disconnect($con);
-header("Location: index.php?sukses=Data Updated Successfully!");
+header("Location: index.php?success=Data Updated Successfully!");
 ?>
