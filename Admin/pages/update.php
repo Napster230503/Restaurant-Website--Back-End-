@@ -1,14 +1,13 @@
 <?php
 require_once "../conection.php";
 $con = db_connect();
-$code = mysqli_real_escape_string($con, $_GET["id"]);
-$sql = "SELECT * FROM employee WHERE EmpCode = '$code'";
+$id = mysqli_real_escape_string($con, $_GET["id"]);
+$sql = "SELECT * FROM employee WHERE emp_id = '$code'";
 $result = mysqli_query($con, $sql);
 while($data = mysqli_fetch_assoc($result)) {
-    $name = $data['EmpName'];
-    $address = $data['EmpAddress'];
-    $zipcode = $data['EmpZipCode'];
-    $dob = date_create($data['EmpDOB']);
+    $name = $data['emp_name'];
+    $address = $data['emp_address'];
+    $tlp = $data['no_tlp'];
 }
 ?>
 <!DOCTYPE html>
@@ -39,9 +38,9 @@ while($data = mysqli_fetch_assoc($result)) {
                     <form id="frmemp" method="post" action="proses_update.php">
                 <fieldset>
                             <div class="mb-3 row">
-                                <label for="code" class="col-sm-2 col-form-label">Employee Code</label>
+                                <label for="code" class="col-sm-2 col-form-label">Employee ID</label>
                                 <div class="col-sm-10">
-                                  <input value="<?php echo $code; ?>" type="text" class="form-control"  id="code" name="code" placeholder="..." required="true" readonly>
+                                  <input value="<?php echo $id; ?>" type="text" class="form-control"  id="code" name="code" placeholder="..." required="true" readonly>
                                 </div>
                               </div>
                               <div class="mb-3 row">
@@ -57,15 +56,9 @@ while($data = mysqli_fetch_assoc($result)) {
                                 </div>
                               </div>
                               <div class="mb-3 row">
-                                <label for="price" class="col-sm-2 col-form-label">Zip Code</label>
+                                <label for="price" class="col-sm-2 col-form-label">No Tlp</label>
                                 <div class="col-sm-10">
-                                  <input value="<?php echo $zipcode; ?>"type="number" class="form-control"  id="zipcode" name="zipcode" placeholder="0" required="true">
-                                </div>
-                              </div>
-                              <div class="mb-3 row">
-                                <label for="stock" class="col-sm-2 col-form-label">Date of Birth</label>
-                                <div class="col-sm-10">
-                                  <input value="<?php echo $dob->format('Y-m-d'); ?>" type="date" class="form-control"  id="dob" name="dob" placeholder="0" required="true">
+                                  <input value="<?php echo $tlp; ?>"type="number" class="form-control"  id="no_tlp" name="no_tlp" placeholder="+62" required="true">
                                 </div>
                               </div>
                               <input type="submit" value="Update" class="btn btn-primary"/>
