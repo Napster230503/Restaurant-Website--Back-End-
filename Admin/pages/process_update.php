@@ -22,14 +22,14 @@ if (empty($address)) {
     die();
 }
 if (!is_numeric($tlp)) {
-    header("Location: update.php?error=Kode pos harus angka!");
+    header("Location: update.php?error=No tlp harus angka!");
     die();
 }
 
  
 // Membuat dan menjalankan query
-$script = "UPDATE employee SET emp_name='$name', emp_address='$address', tlp='$tlp' WHERE emp_id='$id'";
-mysqli_query($con, $script);
+$sql = "UPDATE employee SET emp_name='$name', emp_address='$address', tlp='$tlp' WHERE emp_id='$id'";
+mysqli_query($con, $sql);
 // Menutup koneksi
 db_disconnect($con);
 header("Location: ../../index.php?success=Data Updated Successfully!");

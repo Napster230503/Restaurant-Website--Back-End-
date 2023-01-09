@@ -55,7 +55,7 @@ while($data = mysqli_fetch_assoc($result)) {
                     <div class="mb-3 row">
                         <label for="code" class="col-sm-2 col-form-label">Employee ID</label>
                         <div class="col-sm-10">
-                          <input value="<?php echo $id; ?>" type="text" class="form-control"  id="code" name="code" placeholder="..." required="true" readonly>
+                          <input value="<?php echo $id; ?>" type="text" class="form-control"  id="id" name="id" placeholder="..." required="true" readonly>
                         </div>
                       </div>
 
@@ -76,7 +76,7 @@ while($data = mysqli_fetch_assoc($result)) {
                       <div class="mb-3 row">
                         <label for="price" class="col-sm-2 col-form-label">No Tlp</label>
                         <div class="col-sm-10">
-                          <input value="<?php echo $tlp; ?>"type="number" class="form-control"  id="no_tlp" name="no_tlp" placeholder="+62" required="true">
+                          <input value="<?php echo $tlp; ?>"type="number" class="form-control"  id="tlp" name="tlp" placeholder="+62" required="true">
                         </div>
                       </div>
 
