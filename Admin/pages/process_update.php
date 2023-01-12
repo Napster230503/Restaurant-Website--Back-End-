@@ -26,7 +26,6 @@ if (!is_numeric($tlp)) {
     die();
 }
 
- 
 // Membuat dan menjalankan query
 $sql = "UPDATE employee SET emp_name='$name', emp_address='$address', no_tlp='$tlp' WHERE emp_id='$id'";
 mysqli_query($con, $sql);

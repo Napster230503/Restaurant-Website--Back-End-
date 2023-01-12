@@ -1,5 +1,10 @@
 <?php
 require_once '../conection.php';
+session_start();
+if(!isset($_SESSION['masuk'])){
+  header("Location: login.php");
+  exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,12 +39,19 @@ require_once '../conection.php';
               <li class="breadcrumb-item active">Employee</li>
             </ol>
             <div class="mt-2">
-              <?php if (!empty($_GET["success"])): ?>
+                            <?php if (!empty($_GET["success"])): ?>
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     <strong>Success! </strong><?php echo $_GET["success"]; ?>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>                                
                             <?php endif; ?>
+                            <?php if (!empty($_GET["error"])): ?>
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>error! </strong><?php echo $_GET["success"]; ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>                                
+                            <?php endif; ?>
+              
               </div>
             <div class="card mb-4">
               <div class="card-header">
@@ -103,4 +115,6 @@ require_once '../conection.php';
 </html>
 <?php
 db_disconnect($database);
+
+
 ?>

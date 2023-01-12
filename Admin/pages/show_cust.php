@@ -72,3 +72,5 @@ while($data = mysqli_fetch_assoc($result)) {
 <?php
     db_disconnect($con);
 ?>
+
+<!-- md5 untuk enkripsi password -->

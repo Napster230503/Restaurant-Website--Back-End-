@@ -10,6 +10,11 @@ while($data = mysqli_fetch_assoc($result)) {
     $address = $data['emp_address'];
     $tlp = $data['no_tlp'];
 }
+session_start();
+if(!isset($_SESSION['masuk'])){
+  header("Location: login.php");
+  exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

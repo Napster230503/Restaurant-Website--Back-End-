@@ -3,6 +3,12 @@ include_once '../conection.php';
 $con = db_connect();
 $sql = "SELECT * FROM employee";
 $result = mysqli_query($con, $sql);
+
+session_start();
+if(!isset($_SESSION['masuk'])){
+  header("Location: login.php");
+  exit;
+}
 ?>
 
 <!DOCTYPE html>

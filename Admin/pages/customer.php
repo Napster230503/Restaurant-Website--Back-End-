@@ -3,6 +3,11 @@ include_once '../conection.php';
 $con = db_connect();
 $sql = "SELECT * FROM employee";
 $result = mysqli_query($con, $sql);
+session_start();
+if(!isset($_SESSION['masuk'])){
+  header("Location: login.php");
+  exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +42,18 @@ $result = mysqli_query($con, $sql);
             </ol>
             <div class="card mb-4">
               <div class="card-header">
+              <?php if (!empty($_GET["sukses"])): ?>
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <strong>Success! </strong><?php echo $_GET["sukses"]; ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>                                
+                            <?php endif; ?>
+                            <?php if (!empty($_GET["error"])): ?>
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>Success! </strong><?php echo $_GET["error"]; ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>                                
+                            <?php endif; ?>
                 <i class="fas fa-table me-1"></i>
                 <a href="create_cust.php" class="btn btn-success"><i class=" fas fa-plus me-1"></i>Add Customer</a>
               </div>

@@ -47,12 +47,11 @@ while($data = mysqli_fetch_assoc($result)) {
             <div class="card mb-4">
               <div class="card-header">
                 <p>Customer Update</p>
-                
-              </div>
+            </div>
+              
               <div class="card-body">
-              <form id="frmemp" method="post" action="process_update.php">
+              <form id="frmemp" method="post" action="process_update_cust.php">
                 <fieldset>
-
                     <div class="mb-3 row">
                         <label for="code" class="col-sm-2 col-form-label">Customer ID</label>
                         <div class="col-sm-10">
