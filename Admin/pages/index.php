@@ -37,7 +37,7 @@ if(!isset($_SESSION['masuk'])){
         <div class="date" style="margin-left: 22px; font-size: xx-large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
           <p class="inside_date">
             <?php
-              echo date("d-F-Y");
+              echo date("d F Y");
             ?>
           </p>
         </div>
