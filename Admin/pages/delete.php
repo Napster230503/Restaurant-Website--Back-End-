@@ -51,7 +51,7 @@ while($data = mysqli_fetch_assoc($result)) {
                             <?php endif; ?>
                         </div>
                     <div class="card-body">
-                    <form id="frmemp" method="post" action="proccess_delete.php">
+                    <form id="frmemp" method="post" action="process_delete.php">
                 <fieldset>
                             <div class="mb-3 row">
                                 <label for="code" class="col-sm-2 col-form-label">Employee Code</label>
