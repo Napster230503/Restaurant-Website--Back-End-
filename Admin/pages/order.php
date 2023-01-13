@@ -1,8 +1,6 @@
 <?php
 include_once '../conection.php';
 $con = db_connect();
-$sql = "SELECT * FROM employee";
-$result = mysqli_query($con, $sql);
 
 session_start();
 if(!isset($_SESSION['masuk'])){
@@ -63,8 +61,10 @@ if(!isset($_SESSION['masuk'])){
                     <tr>
                       <th>No</th>
                       <th>Order ID</th>
-                      <th>Customer ID</th>
-                      <th>Employee ID</th>
+                      <th>Menu ID</th>
+                      <th>Qty</th>
+                      <th>order date</th>
+                      <th>Total</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -72,16 +72,19 @@ if(!isset($_SESSION['masuk'])){
                     $database = db_connect ();
 
                     $no = 1;
-                    $tampil = mysqli_query($database, 'SELECT * FROM orders order by order_id desc');
+                    $tampil = mysqli_query($database, 'SELECT * FROM order_detail JOIN menu ON order_detail.menu_id = menu.menu_id  order by order_id desc');
                     while($data = mysqli_fetch_assoc($tampil)) :   
                   ?>
                   <tbody>
                     <tr>
                         <td><?php echo $no++;?></td>
                         <td><?php echo $data['order_id'];?></td>
-                        <td><?php echo $data['cust_id'];?></td>
-                        <td><?php echo $data['emp_id'];?></td>
+                        <td><?php echo $data['menu_id'] . " - ", $data['menu_name'];?></td>
+                        <td><?php echo $data['jumlah'];?></td>
+                        <td><?php echo $data['order_date'];?></td>
+                        <td><?php echo number_format ( $data['Total_price'], 0);?></td>
                         <td>
+                        <a href="show_order.php?id=<?php echo $data['order_id']; ?>"><i class="fa fa-eye me-3"></i></a>
                           <a href="#" class='btn btn-primary'>Change</a>
                           <a href="#" class='btn btn-danger'>Delete</a>
                         </td>
