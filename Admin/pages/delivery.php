@@ -36,6 +36,16 @@ if(!isset($_SESSION['masuk'])){
       </div>
       <div id="layoutSidenav_content">
         <main>
+
+        <div class="date" style="margin-left: 22px; font-size: xx-large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+          <p class="inside_date">
+            <?php
+              echo date("d-F-Y");
+            ?>
+          </p>
+        </div>
+          <hr>  
+
           <div class="container-fluid px-4">
             <h1 class="mt-4">Information</h1>
             <ol class="breadcrumb mb-4">
