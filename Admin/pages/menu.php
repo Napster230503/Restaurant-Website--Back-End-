@@ -85,6 +85,7 @@ if(!isset($_SESSION['masuk'])){
                           <td><?php echo $data['price']; ?></td>
                           <td><?php echo $data['qty']; ?></td>
                           <td>
+                            <a href="show_menu.php"><i class="fa fa-eye me-3"></i></a>
                             <a href="#" class='btn btn-primary'>Change</a>
                             <a href="#" class='btn btn-danger'>Delete</a>
                           </td>
