@@ -85,7 +85,6 @@ if(!isset($_SESSION['masuk'])){
                         <td><?php echo number_format ( $data['Total_price'], 0);?></td>
                         <td>
                         <a href="show_order.php?id=<?php echo $data['order_id']; ?>"><i class="fa fa-eye me-3"></i></a>
-                          <a href="#" class='btn btn-primary'>Change</a>
                           <a href="#" class='btn btn-danger'>Delete</a>
                         </td>
                       <td>
