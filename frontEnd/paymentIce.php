@@ -35,22 +35,22 @@
           <div class="collapse navbar-collapse fs-5 ms-5" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link" aria-current="page" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about_us.html">About</a>
+                <a class="nav-link" href="about_us.php">About</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" href="menu.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Menu </a>
+                <a class="nav-link dropdown-toggle active" href="menu.php" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Menu </a>
                 <ul class="dropdown-menu" style="background-color: white">
-                  <li><a class="dropdown-item" href="food.html">Food</a></li>
-                  <li><a class="dropdown-item" href="drink.html">Drink</a></li>
+                  <li><a class="dropdown-item" href="food.php">Food</a></li>
+                  <li><a class="dropdown-item" href="drink.php">Drink</a></li>
                   <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="ice_cream.html">Ice cream</a></li>
+                  <li><a class="dropdown-item" href="ice_cream.php">Ice cream</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="promo.html">Promo</a>
+                <a class="nav-link" href="promo.php">Promo</a>
               </li>
             </ul>
           </div>
@@ -164,7 +164,7 @@
           icon: 'success',
           button: true,
         }).then(function () {
-          window.location = 'index.html';
+          window.location = 'index.php';
         });
       }
     </script>
