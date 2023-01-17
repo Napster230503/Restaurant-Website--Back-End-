@@ -47,6 +47,18 @@ if(!isset($_SESSION['masuk'])){
 
           <div class="container-fluid px-4">
             <h1 class="mt-4">Information</h1>
+            <?php if (!empty($_GET["error"])): ?>
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>Failed! </strong><?php echo $_GET["error"]; ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>    
+                            <?php endif; ?>
+                            <?php if (!empty($_GET["sukses"])): ?>
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <strong>Success! </strong><?php echo $_GET["sukses"]; ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>                                
+                            <?php endif; ?>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item active">Order</li>
             </ol>
@@ -85,7 +97,7 @@ if(!isset($_SESSION['masuk'])){
                         <td><?php echo number_format ( $data['Total_price'], 0);?></td>
                         <td>
                         <a href="show_order.php?id=<?php echo $data['order_id']; ?>"><i class="fa fa-eye me-3"></i></a>
-                          <a href="#" class='btn btn-danger'>Delete</a>
+                          <a href="deleteOrder.php" class='btn btn-danger'>Delete</a>
                         </td>
                       <td>
 
