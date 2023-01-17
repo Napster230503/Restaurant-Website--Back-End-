@@ -67,9 +67,9 @@ if(!isset($_SESSION['masuk'])){
                 <i class="fas fa-table me-1"></i>
                 <a href="create_cust.php" class="btn btn-success"><i class=" fas fa-plus me-1"></i>Add Customer</a>
               </div>
-              <div class="card-body">
-                <table id="datatablesSimple">
-                  <thead>
+              <div class="card-body"  >
+                <table id="datatablesSimple"  class="table table-stripped">
+                  <thead >
                     <tr>
                       <th>No</th>
                       <th>ID</th>

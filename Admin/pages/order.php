@@ -56,7 +56,7 @@ if(!isset($_SESSION['masuk'])){
                 Data FS RESTO
               </div>
               <div class="card-body">
-                <table id="datatablesSimple">
+                <table id="datatablesSimple" class="table table-stripped">
                   <thead>
                     <tr>
                       <th>No</th>
