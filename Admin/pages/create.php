@@ -59,10 +59,13 @@ if(!isset($_SESSION['masuk'])){
               </div>
               <div class="card-body">
               <form action="processCrt.php" method="post">
+
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">ID</label>
-                <input type="text" name="id" class="form-control" id="exampleFormControlInput1" required='true' readonly>
+                <input type="text" name="id" class="form-control" id="auto_id" 
+                 readonly ><?php include 'autocode.php' ?>
               </div>
+
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Name</label>
                 <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Anonymous" required='true'>
