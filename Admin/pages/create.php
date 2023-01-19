@@ -62,8 +62,7 @@ if(!isset($_SESSION['masuk'])){
 
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">ID</label>
-                <input type="text" name="id" class="form-control" id="auto_id" 
-                 readonly ><?php include 'autocode.php' ?>
+                <input type="text" name="id" class="form-control" id="auto_id" readonly value="<?php include 'autocode.php' ?>">
               </div>
 
               <div class="mb-3">
