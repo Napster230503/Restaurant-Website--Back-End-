@@ -81,9 +81,6 @@ if(!isset($_SESSION['masuk'])){
                 <input type="submit" value="Submit" class="btn btn-primary"/>
             
               </form>
-             
-
-
               </div>
             </div>
           </div>
