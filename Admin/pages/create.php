@@ -56,14 +56,12 @@ if(!isset($_SESSION['masuk'])){
                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                       </div>                                
                 <?php endif; ?>
-
-
               </div>
               <div class="card-body">
               <form action="processCrt.php" method="post">
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">ID</label>
-                <input type="text" name="id" class="form-control" id="exampleFormControlInput1" placeholder="E******" required='true'>
+                <input type="text" name="id" class="form-control" id="exampleFormControlInput1" required='true' readonly>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Name</label>
