@@ -4,7 +4,7 @@ $con = db_connect();
 $code = mysqli_real_escape_string($con, $_GET["id"]);
 $sql = "SELECT * FROM order_detail WHERE order_id = '$code'";
 $sql2 = "SELECT * FROM order_detail JOIN menu ON  order_detail.menu_id = menu.menu_id";
-$sql3 = "SELECT * FROM order_detail JOIN orders ON order_detail.order_id = orders.order_id JOIN menu ON order_detail.menu_id = menu.menu_id";
+$sql3 = "SELECT * FROM order_detail JOIN orders ON order_detail.order_id = orders.order_id JOIN menu ON order_detail.menu_id = menu.menu_id order by 'order_id' desc limit 1";
 $sql4 = "SELECT * FROM menu JOIN category ON menu.category_id = category.category_id";
 $result = mysqli_query($con, $sql);
 $result2 = mysqli_query($con, $sql2);
@@ -74,7 +74,7 @@ if(!isset($_SESSION['masuk'])){
                                         <th>Menu</th>
                                         <th>Jumlah pesan</th>
                                     </tr>
-                                <?php 
+                                <?php
                                     $no = 1;
                                     while($data = mysqli_fetch_assoc($result3)) {
                                         ?>
