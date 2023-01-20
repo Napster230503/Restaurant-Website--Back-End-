@@ -63,7 +63,7 @@ if(!isset($_SESSION['masuk'])){
               <form action="process_create_cust.php" method="post">
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">ID</label>
-                <input type="text" name="id" class="form-control" id="exampleFormControlInput1" placeholder="E******" required='true'>
+                <input type="text" name="id" class="form-control" id="emp_id_auto" readonly value="<?php include 'autocode_cust.php' ?>">
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Name</label>
