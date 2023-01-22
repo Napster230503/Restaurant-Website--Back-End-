@@ -139,8 +139,8 @@ require_once 'conection.php';
       <div class="card">
         <div class="row">
           <div class="col-sm">
-            <a href="https://play.google.com/store/"><img src="PlayStore.png" alt="PlayStore" style="width: 250px" class="ms-4 mt-5" /></a>
-            <a href="https://www.apple.com/app-store/"><img src="appStore.png" alt="appStore" style="width: 200px" class="ms-5 mt-5" /></a>
+            <a href="https://play.google.com/store/"><img src="IMG/PlayStore.png" alt="PlayStore" style="width: 250px" class="ms-4 mt-5" /></a>
+            <a href="https://www.apple.com/app-store/"><img src="IMG/appStore.png" alt="appStore" style="width: 200px" class="ms-5 mt-5" /></a>
           </div>
           <div class="col-sm">
             <p class="mt-5 ms-4 fs-2" style="color: #ffab3d;">More Efficient and Practical by Downloading the FS RESTO application on the Google PlayStore and AppStore. Download Now!</p>
@@ -186,7 +186,7 @@ require_once 'conection.php';
         <h5><span style="color: white" class="fs-2">FS</span> Resto</h5>
         <p style="color: white">Fahmi A.N</p>
         <p style="color: white">M.Syaifullah</p>
-        <h5 style="color: white">©2022 FS_RESTO_Project1Semester3Quarter1</h5>
+        <h5 style="color: white">©<?php echo date('Y')?> FS_RESTO_Project1Semester3Quarter1</h5>
       </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>

@@ -1,5 +1,17 @@
 <?php
 require_once 'conection.php';
+
+$con = db_connect();
+
+
+$sql = "SELECT * FROM menu WHERE menu_id = 'F02'";
+$result = mysqli_query($con, $sql);
+
+while($data = mysqli_fetch_assoc($result)){
+  $menuId = $data['menu_id'];
+  $namaMenu = $data['menu_name'];
+  $harga = $data['price'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -71,11 +83,11 @@ require_once 'conection.php';
       <img src="IMG/Mie_Aceh.jpg" alt="Mie Aceh" />
       <div class="card-body">
         <center>
-          <h3 style="color: #f48901">Mie aceh</h3>
-          <h5>Rp35.000</h5>
+          <h3 style="color: #f48901"><?php echo $namaMenu?></h3>
+          <h5><?php echo 'Rp. ' . number_format($harga, 0)?></h5>
         </center>
 
-        <form action="post" class="mt-5">
+        <form action="prosesInsert.php" class="mt-5" method="post">
           <h5>Jumlah makanan</h5>
           <input type="number" style="width: 5rem; border: none; border-bottom: 2px solid #f48901; outline: none" required="" onkeyup="mult()" onclick="mult()" id="harga" /> <br />
           <h5 class="mt-5">Level Kepedasan</h5>

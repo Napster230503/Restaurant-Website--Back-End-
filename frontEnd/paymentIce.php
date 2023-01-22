@@ -1,5 +1,18 @@
 <?php
 require_once 'conection.php';
+
+$con = db_connect();
+
+
+// nampilin data dan ditempel di form pemesanan
+$sql = "SELECT * FROM menu WHERE menu_id = 'IC01'";
+$result = mysqli_query($con, $sql);
+
+while($data = mysqli_fetch_assoc($result)){
+  $menuId = $data['menu_id'];
+  $namaMenu = $data['menu_name'];
+  $harga = $data['price'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -79,8 +92,8 @@ require_once 'conection.php';
       <img src="IMG/softIce.jpg" alt="soft ice cream" />
       <div class="card-body">
         <center>
-          <h3 style="color: #f48901">Soft ice cream</h3>
-          <h5>Rp10.000</h5>
+          <h3 style="color: #f48901"><?php echo $namaMenu?></h3>
+          <h5><?php echo 'Rp. ' . number_format($harga,0)?></h5>
         </center>
 
         <form action="post" class="mt-5">
