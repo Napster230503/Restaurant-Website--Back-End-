@@ -3,11 +3,15 @@ require_once 'conection.php';
 
 $con = db_connect();
 
-
-$sql = "SELECT * FROM menu WHERE menu_id = 'F02'";
+// untuk agar saat tombol dipencet di food.php sesuai dengan di database
+$code = mysqli_real_escape_string($con, $_GET["id"]);
+$sql = "SELECT * FROM order_detail WHERE order_id = '$code'";
 $result = mysqli_query($con, $sql);
+// menampilkan informasi di dalam menu_id F02
+$sql2 = "SELECT * FROM menu WHERE menu_id = 'F02'";
+$result2 = mysqli_query($con, $sql2);
 
-while($data = mysqli_fetch_assoc($result)){
+while($data = mysqli_fetch_assoc($result2)){
   $menuId = $data['menu_id'];
   $namaMenu = $data['menu_name'];
   $harga = $data['price'];
@@ -75,6 +79,18 @@ while($data = mysqli_fetch_assoc($result)){
     <!-- akhir navbar -->
 
     <!-- konten -->
+                            <?php if (!empty($_GET["success"])): ?>
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <strong>Success! </strong><?php echo $_GET["success"]; ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>                                
+                            <?php endif; ?>
+                            <?php if (!empty($_GET["error"])): ?>
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>error! </strong><?php echo $_GET["success"]; ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>                                
+                            <?php endif; ?>
     <div style="margin: 20px auto; width: 30rem; text-align: center">
       <h1>anda memesan :</h1>
     </div>
@@ -87,9 +103,9 @@ while($data = mysqli_fetch_assoc($result)){
           <h5><?php echo 'Rp. ' . number_format($harga, 0)?></h5>
         </center>
 
-        <form action="prosesInsert.php" class="mt-5" method="post">
+        <form action="prosesInsert.php"  method="post">
           <h5>Jumlah makanan</h5>
-          <input type="number" style="width: 5rem; border: none; border-bottom: 2px solid #f48901; outline: none" required="" onkeyup="mult()" onclick="mult()" id="harga" /> <br />
+          <input name="jumlah" type="number" style="width: 5rem; border: none; border-bottom: 2px solid #f48901; outline: none" required="" onkeyup="mult()" onclick="mult()" id="harga" /> <br />
           <h5 class="mt-5">Level Kepedasan</h5>
 
           <input type="radio" name="pesanan" value="pedesMampus" required="" />
@@ -115,9 +131,9 @@ while($data = mysqli_fetch_assoc($result)){
           </div>
 
           <h5 class="mt-5">Total</h5>
-          <h2 id="total"></h2>
-          <button type="button" class="btn btn-warning mt-4" onclick="tombol()">Pesan</button>
-          <button type="button" class="btn btn-danger mt-4 ms-5"><a href="food.php" style="color: white; text-decoration: none">Batal</a></button>
+          <h2 id="total" name="total"></h2>
+          <input type="button" class="btn btn-warning mt-4" onclick="tombol()" value="Pesan">
+          <a href="food.php" class="btn btn-danger mt-4 ms-4"> Batal</a>
         </form>
       </div>
     </div>
@@ -149,7 +165,7 @@ while($data = mysqli_fetch_assoc($result)){
     <!-- akhir konten -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       function tombol() {
         swal({
           title: 'Your Transaction Is Success',
@@ -160,7 +176,7 @@ while($data = mysqli_fetch_assoc($result)){
           window.location = 'index.php';
         });
       }
-    </script>
+    </script> -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
       import swal from 'sweetalert';

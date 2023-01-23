@@ -12,6 +12,7 @@ require_once 'conection.php';
     <link rel="shortcut icon" href="IMG/Brown Simple Restaurant Logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hepta+Slab&family=Kdam+Thmor+Pro&family=PT+Sans&family=Silkscreen&family=Ubuntu+Mono&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
   </head>
@@ -19,14 +20,14 @@ require_once 'conection.php';
 
     <!--Navbar-->
     <section>
-      <nav class="navbar navbar-expand-lg " style="border-bottom: 2px solid #f48901; font-family: 'Hepta Slab', serif;">
+      <nav class="navbar navbar-expand-lg" style="border-bottom: 2px solid #f48901; font-family: 'Hepta Slab', serif;">
         <div class="container-fluid">
           <a class="navbar-brand ms-5 fs-3" href="index.php"> <span style="color: #f48901" class="fs-2"> FS</span> Resto</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse fs-5 ms-5" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               </li>
@@ -45,9 +46,12 @@ require_once 'conection.php';
               <li class="nav-item">
                 <a class="nav-link" href="promo.php">Promo</a>
               </li>
+              <li class="nav-item ms-5">
+                <a href="cart.php"><i class="fas fa-shopping-cart fs-2 "></i></a>
+              </li>
             </ul>
           </div>
-          
+          </div>
       <!-- <div class="payment">
         <a href="payment.html"><img src="cart.png" alt="Payment" width="60px";></a>
       </div> -->
