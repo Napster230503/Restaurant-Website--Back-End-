@@ -8,7 +8,7 @@ $code = mysqli_real_escape_string($con, $_GET["id"]);
 $sql = "SELECT * FROM order_detail WHERE order_id = '$code'";
 $result = mysqli_query($con, $sql);
 // menampilkan informasi di dalam menu_id F02
-$sql2 = "SELECT * FROM menu WHERE menu_id = 'F02'";
+$sql2 = "SELECT * FROM menu WHERE menu_id = '$code'";
 $result2 = mysqli_query($con, $sql2);
 
 while($data = mysqli_fetch_assoc($result2)){
@@ -103,21 +103,28 @@ while($data = mysqli_fetch_assoc($result2)){
           <h5><?php echo 'Rp. ' . number_format($harga, 0)?></h5>
         </center>
 
-        <form action="prosesInsert2.php"  method="post">
-          <h5>Jumlah makanan</h5>
-          <input name="jumlah" type="number" style="width: 5rem; border: none; border-bottom: 2px solid #f48901; outline: none" required="" onkeyup="mult()" onclick="mult()" id="harga" /> <br />
-          <h5 class="mt-5">Level Kepedasan</h5>
+        <?php
+         $tampil = mysqli_query($con, "SELECT * FROM menu limit 1");
+          while($data = mysqli_fetch_assoc($tampil)):
+            ?>
+              <form action="tambahCart.php"  method="post">
+                <h5>Jumlah makanan</h5>
+                <input name="jumlah" type="number" style="width: 5rem; border: none; border-bottom: 2px solid #f48901; outline: none" required="" onkeyup="mult()" onclick="mult()" id="harga" /> <br />
 
-          <input type="radio" name="pesanan" value="pedesMampus" required="" />
-          <label for="pedesMampus">Pedes Mampus</label>
-          <input type="radio" class="ms-4" name="pesanan" value="pedesgila" required="" />
-          <label for="pedesgila">Pedes Gila</label>
+                <h5 class="mt-5">Level Kepedasan</h5>
+                <input type="radio" name="pesanan" value="pedesMampus" required="" />
+                <label for="pedesMampus">Pedes Mampus</label>
+                <input type="radio" class="ms-4" name="pesanan" value="pedesgila" required="" />
+                <label for="pedesgila">Pedes Gila</label>
 
-          <h5 class="mt-5">Total</h5>
-          <h2 id="total" name="total"></h2>
-          <input type="button" class="btn btn-warning mt-4" onclick="tombol()" value="Pesan">
-          <a href="food.php" class="btn btn-danger mt-4 ms-4"> Batal</a>
-        </form>
+                <h5 class="mt-5">Total</h5>
+                <h2 id="total" name="total"></h2>
+                <input type="button" class="btn btn-warning mt-4" onclick="tombol()" value="Pesan"><a href="cart.php" >"></a>
+                <a href="food.php" class="btn btn-danger mt-4 ms-4"> Batal</a>
+              </form>  
+          <?php endwhile; ?>
+        
+        
       </div>
     </div>
 

@@ -1,5 +1,16 @@
 <?php
 require_once 'conection.php';
+
+$con = db_connect();
+
+$sql2 = "SELECT * FROM menu WHERE menu_id = 'F02'";
+$result2 = mysqli_query($con, $sql2);
+
+while($data = mysqli_fetch_assoc($result2)){
+  $menuId = $data['menu_id'];
+  $namaMenu = $data['menu_name'];
+  $harga = $data['price'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +75,7 @@ require_once 'conection.php';
 
 <!-- efek jquery -->
 
-    <div class="container mt-5" style=" width: 500px;">
+    <!-- <div class="container mt-5" style=" width: 500px;">
       <div class="row">
         <div class="col-md-8">
         <div class="card" style="width: 30rem;">
@@ -77,11 +88,11 @@ require_once 'conection.php';
           <label for="">Delivery</label>
 
           <div id="slideUpDown">
-            <!-- <label for="" class="me-5">nama</label> -->
+            <label for="" class="me-5">nama</label>
             <input type="text" class="mt-4" style="border: none; border-bottom: 2px solid #f48901; outline: none; width: 260px" placeholder="Nama anda" /> <br />
-            <!-- <label for="" class="me-5">alamat</label> -->
+            <label for="" class="me-5">alamat</label>
             <input type="text" class="mt-4" style="border: none; border-bottom: 2px solid #f48901; outline: none; width: 260px" placeholder="Alamat" /> <br />
-            <!-- <label for="" class="me-5">no.handphone</label> -->
+            <label for="" class="me-5">no.handphone</label>
             <input type="number" class="mt-4" style="border: none; border-bottom: 2px solid #f48901; outline: none; width: 260px" placeholder="No.Handphone" />
           </div>
           <br>
@@ -93,7 +104,68 @@ require_once 'conection.php';
         </div>
         </div>
       </div>
-      </div>
+      </div> -->
+
+<?php
+    // session_start();
+    require_once 'conection.php';
+
+    $con = db_connect();
+?>
+<body>
+
+    <a href="food.php">beli produk</a>
+
+    <h1>Cart saya</h1>
+
+    <?php
+        if(!empty($_SESSION["cart"])){
+    ?>  
+        <table border="1">
+            <tr>
+                <th>No.</th>
+                <th>Nama</th>
+                <th>Harga</th>
+                <th>Jumlah</th>
+                <th>Subtotal</th>
+                <th>Aksi</th>
+            </tr>
+            <tr>
+                <?php
+                    $grandTotal = 0;
+                    $no = 1;
+                    foreach($_SESSION["cart"] as $cart => $val){
+                        $subtotal = $val["harga"] * $val["jumlah"];
+                ?>
+                    <tr>
+                        <td><?= $no++;?></td>
+                        <td><?php echo $val["nama"];?></td>
+                        <td><?php echo $val["harga"];?></td>
+                        <td><?php echo $val["jumlah"];?> pcs</td>
+                        <td><?php echo $subtotal;?></td>
+                        <td>
+                            <a href="hapusCart.php?idProduk=<?php echo $menuId?>">Batal</a>
+                        </td>
+                    </tr>
+                <?php
+
+                        $grandTotal += $subtotal;
+                    }
+                ?>
+            </tr>
+            <tr>
+                <th colspan=5>Grand total</th>
+                <th><?php echo number_format($grandTotal,0)?> </th>
+            </tr>
+        </table>
+        <a href="tambahTransaksi.php">Beli</a>
+    <?php
+        }else{
+            echo "belum ada produk di shop cart";
+        }
+    ?>
+</body>
+</html>
 
 
           

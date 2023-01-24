@@ -2,6 +2,15 @@
 require_once 'conection.php';
 
 $con = db_connect();
+
+$sql2 = "SELECT * FROM menu WHERE menu_id = 'F02'";
+$result2 = mysqli_query($con, $sql2);
+
+while($data = mysqli_fetch_assoc($result2)){
+  $menuId = $data['menu_id'];
+  $namaMenu = $data['menu_name'];
+  $harga = $data['price'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -101,13 +110,14 @@ $con = db_connect();
             <div class="card" style="width: 18rem">
               <img src="IMG/Mie_Aceh.jpg" class="card-img-top" alt="mie A A A Aceh" />
               <div class="card-body">
-                <h5 class="card-title" style="color: #f48901">Mie aceh</h5>
-                <p class="card-text">Rp 35.000</p>
-                <a href="payment2.php?id=<?php echo $data['menu_id']?>" class="btn btn-warning">Pesan</a>
+                <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name']?></h5>
+                <p class="card-text"><?php echo "Rp." . number_format($harga,0)?></p>
+                <a href="tambahCart.php?id=<?php echo $data['menu_id']?>" class="btn btn-warning">Pesan</a>
               </div>
             </div>
           </div>
         <?php endwhile; ?>
+        
         <div class="col-sm mb-5 ms-5">
           <div class="card" style="width: 18rem">
             <img src="IMG/soto.jpg" class="card-img-top" alt="soto" />
