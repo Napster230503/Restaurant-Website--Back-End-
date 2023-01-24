@@ -113,23 +113,6 @@ while($data = mysqli_fetch_assoc($result2)){
           <input type="radio" class="ms-4" name="pesanan" value="pedesgila" required="" />
           <label for="pedesgila">Pedes Gila</label>
 
-          <!-- efek jquery -->
-          <h5 class="mt-5">Pilih metode pemesanan</h5>
-          <input type="radio" name="pemesanan" class="detail" value="ditempat" />
-          <label for="">makan ditempat</label>
-          <input type="radio" name="pemesanan" class="detail ms-5" value="delivery" />
-          <label for="">Delivery</label>
-          <!-- akhir efek jquery -->
-
-          <div id="slideUpDown">
-            <!-- <label for="" class="me-5">nama</label> -->
-            <input type="text" class="mt-4" style="border: none; border-bottom: 2px solid #f48901; outline: none; width: 260px" placeholder="Nama anda" /> <br />
-            <!-- <label for="" class="me-5">alamat</label> -->
-            <input type="text" class="mt-4" style="border: none; border-bottom: 2px solid #f48901; outline: none; width: 260px" placeholder="Alamat" /> <br />
-            <!-- <label for="" class="me-5">no.handphone</label> -->
-            <input type="number" class="mt-4" style="border: none; border-bottom: 2px solid #f48901; outline: none; width: 260px" placeholder="No.Handphone" />
-          </div>
-
           <h5 class="mt-5">Total</h5>
           <h2 id="total" name="total"></h2>
           <input type="button" class="btn btn-warning mt-4" onclick="tombol()" value="Pesan">
@@ -137,23 +120,6 @@ while($data = mysqli_fetch_assoc($result2)){
         </form>
       </div>
     </div>
-
-    <script src="JavaScript/jquery-3.6.1.js"></script>
-    <!-- jika dibawa pulang maka form akan muncul -->
-    <script>
-      $(document).ready(function () {
-        $('#slideUpDown').css('display', 'none'); //Menghilangkan form-input ketika pertama kali dijalankan
-        $('.detail').click(function () {
-          //Memberikan even ketika class detail di klik (class detail ialah class radio button)
-          if ($("input[name='pemesanan']:checked").val() == 'delivery') {
-            //Jika radio button "berbeda" dipilih maka tampilkan form-inputan
-            $('#slideUpDown').slideDown('fast'); //Efek Slide Down (Menampilkan Form Input)
-          } else {
-            $('#slideUpDown').slideUp('fast'); //Efek Slide Up (Menghilangkan Form Input)
-          }
-        });
-      });
-    </script>
 
     <script>
       function mult() {

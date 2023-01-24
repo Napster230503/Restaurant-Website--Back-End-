@@ -30,35 +30,38 @@ require_once 'conection.php';
 
     <!--Navbar-->
     <section>
-      <nav class="navbar navbar-expand-lg " style="border-bottom: 2px solid #f48901; font-family: 'Hepta Slab', serif;">
+      <nav class="navbar navbar-expand-lg" style="border-bottom: 2px solid #f48901; font-family: 'Hepta Slab', serif;">
         <div class="container-fluid">
           <a class="navbar-brand ms-5 fs-3" href="index.php"> <span style="color: #f48901" class="fs-2"> FS</span> Resto</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse fs-5 ms-5" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about_us.php">About</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="menu.php" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Menu </a>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Menu </a>
                 <ul class="dropdown-menu" style="background-color: white">
                   <li><a class="dropdown-item" href="food.php">Food</a></li>
                   <li><a class="dropdown-item" href="drink.php">Drink</a></li>
                   <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="ice_cream.html">Ice cream</a></li>
+                  <li><a class="dropdown-item" href="ice_cream.php">Ice cream</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="promo.php">Promo</a>
+                <a class="nav-link" href="promo.php">Promo</a>
+              </li>
+              <li class="nav-item ms-5">
+                <a href="cart.php"><i class="fas fa-shopping-cart fs-2 "></i></a>
               </li>
             </ul>
           </div>
-          
+          </div>
       <!-- <div class="payment">
         <a href="payment.html"><img src="cart.png" alt="Payment" width="60px";></a>
       </div> -->
