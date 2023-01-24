@@ -61,6 +61,48 @@ require_once 'conection.php';
     </section>
 <!--Navbar End-->               
 
+
+<!-- efek jquery -->
+          <Form method="post" action="">
+          <h5 class="mt-5">Pilih metode pemesanan</h5>
+          <input type="radio" name="pemesanan" class="detail" value="ditempat" />
+          <label for="">makan ditempat</label>
+          <input type="radio" name="pemesanan" class="detail ms-5" value="delivery" />
+          <label for="">Delivery</label>
+
+          <input type="button" value="Check Out" class="btn btn-warning mt-4">
+          </Form>
+          <!-- akhir efek jquery -->
+
+          <div id="slideUpDown">
+            <!-- <label for="" class="me-5">nama</label> -->
+            <input type="text" class="mt-4" style="border: none; border-bottom: 2px solid #f48901; outline: none; width: 260px" placeholder="Nama anda" /> <br />
+            <!-- <label for="" class="me-5">alamat</label> -->
+            <input type="text" class="mt-4" style="border: none; border-bottom: 2px solid #f48901; outline: none; width: 260px" placeholder="Alamat" /> <br />
+            <!-- <label for="" class="me-5">no.handphone</label> -->
+            <input type="number" class="mt-4" style="border: none; border-bottom: 2px solid #f48901; outline: none; width: 260px" placeholder="No.Handphone" />
+          </div>
+
+          <script src="JavaScript/jquery-3.6.1.js"></script>
+    <!-- jika dibawa pulang maka form akan muncul -->
+    <script>
+      $(document).ready(function () {
+        $('#slideUpDown').css('display', 'none'); //Menghilangkan form-input ketika pertama kali dijalankan
+        $('.detail').click(function () {
+          //Memberikan even ketika class detail di klik (class detail ialah class radio button)
+          if ($("input[name='pemesanan']:checked").val() == 'delivery') {
+            //Jika radio button "berbeda" dipilih maka tampilkan form-inputan
+            $('#slideUpDown').slideDown('fast'); //Efek Slide Down (Menampilkan Form Input)
+          } else {
+            $('#slideUpDown').slideUp('fast'); //Efek Slide Up (Menghilangkan Form Input)
+          }
+        });
+      });
+    </script>
+
+
+
+
     <!--NAVBAR END-->
 
     <footer class="author" style="background-color: grey; padding: 12px 0; margin-top:500px;">
