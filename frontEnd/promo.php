@@ -39,7 +39,7 @@ require_once 'conection.php';
           <div class="collapse navbar-collapse fs-5 ms-5" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                <a class="nav-link" aria-current="page" href="index.php">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about_us.php">About</a>
@@ -54,7 +54,7 @@ require_once 'conection.php';
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="promo.php">Promo</a>
+                <a class="nav-link active" href="promo.php">Promo</a>
               </li>
               <li class="nav-item ms-5">
                 <a href="cart.php"><i class="fas fa-shopping-cart fs-2 "></i></a>
