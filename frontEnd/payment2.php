@@ -103,7 +103,7 @@ while($data = mysqli_fetch_assoc($result2)){
           <h5><?php echo 'Rp. ' . number_format($harga, 0)?></h5>
         </center>
 
-        <form action="prosesInsert.php"  method="post">
+        <form action="prosesInsert2.php"  method="post">
           <h5>Jumlah makanan</h5>
           <input name="jumlah" type="number" style="width: 5rem; border: none; border-bottom: 2px solid #f48901; outline: none" required="" onkeyup="mult()" onclick="mult()" id="harga" /> <br />
           <h5 class="mt-5">Level Kepedasan</h5>
