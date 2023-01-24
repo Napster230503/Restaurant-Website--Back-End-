@@ -63,16 +63,18 @@ require_once 'conection.php';
 
 
 <!-- efek jquery -->
+
+    <div class="container mt-5" style=" width: 500px;">
+      <div class="row">
+        <div class="col-md-8">
+        <div class="card" style="width: 30rem;">
+          <div class="card-body">
           <Form method="post" action="">
           <h5 class="mt-5">Pilih metode pemesanan</h5>
           <input type="radio" name="pemesanan" class="detail" value="ditempat" />
           <label for="">makan ditempat</label>
           <input type="radio" name="pemesanan" class="detail ms-5" value="delivery" />
           <label for="">Delivery</label>
-
-          <input type="button" value="Check Out" class="btn btn-warning mt-4">
-          </Form>
-          <!-- akhir efek jquery -->
 
           <div id="slideUpDown">
             <!-- <label for="" class="me-5">nama</label> -->
@@ -82,6 +84,22 @@ require_once 'conection.php';
             <!-- <label for="" class="me-5">no.handphone</label> -->
             <input type="number" class="mt-4" style="border: none; border-bottom: 2px solid #f48901; outline: none; width: 260px" placeholder="No.Handphone" />
           </div>
+          <br>
+
+          <input type="button" value="Check Out" class="btn btn-warning mt-4">
+
+          </Form>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+
+
+          
+          <!-- akhir efek jquery -->
+
+          
 
           <script src="JavaScript/jquery-3.6.1.js"></script>
     <!-- jika dibawa pulang maka form akan muncul -->
