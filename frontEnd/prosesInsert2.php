@@ -13,7 +13,7 @@
 
     $jumlah = mysqli_real_escape_string($con, $_POST['jumlah']);
     $levelPedas = mysqli_real_escape_string($con, $_POST['pesanan']);
-    $metode = mysqli_real_escape_string($con, $_POST['pemsanan']);
+    $metode = mysqli_real_escape_string($con, $_POST['pemesanan']);
     $total = mysqli_real_escape_string($con, $_POST['total']);
 
     if (empty($jumlah)) {
@@ -31,5 +31,5 @@
 
     $sql = "INSERT into cart (id, nama_menu, jumlah, levelPedas, metode, Total) VALUES ('', '$namaMenu','$jumlah', '$levelPedas', '$metode', '$total')";
     mysqli_query($con, $sql);
-    header("Location: payment2.php?sukses=Data Saved Successfully!");
+    // header("Location: payment2.php?sukses=Data Saved Successfully!");
 ?>
