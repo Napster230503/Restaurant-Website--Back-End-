@@ -1,11 +1,10 @@
 <?php
     //  session_start();
     require_once 'conection.php';
-    $con =  db_connect();
+    $con = db_connect();
+    $id = $_GET['idMenu'];
 
-    $id = mysqli_real_escape_string($con, $_GET['id']);
-
-    $sql = "SELECT * FROM menu WHERE menu_id = '$id'";
+    $sql = "SELECT * FROM menu WHERE menu_id = '$id'" ;
     $query = mysqli_query($con, $sql);
     $hasil = mysqli_fetch_object($query);
     // $jumlah;

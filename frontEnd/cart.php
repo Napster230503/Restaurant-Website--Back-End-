@@ -151,7 +151,7 @@ while($data = mysqli_fetch_assoc($result2)){
                         <td><?php echo $val["jumlah"];?> porsi</td>
                         <td><?php echo $subtotal;?></td>
                         <td>
-                            <a href="hapusCart.php?idProduk=<?php echo $cart?>">Batal</a>
+                            <a href="hapusCart.php?idMenu=<?php echo $cart?>">Batal</a>
                         </td>
                     </tr>
                 <?php

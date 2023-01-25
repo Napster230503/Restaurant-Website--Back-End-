@@ -112,7 +112,7 @@ while($data = mysqli_fetch_assoc($result2)){
               <div class="card-body">
                 <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name'];?></h5>
                 <p class="card-text"><?php echo "Rp." . number_format($harga,0);?></p>
-                <a href="tambahCart.php?id=<?php echo $data['menu_id'];?>" class="btn btn-warning">Pesan</a>
+                <a href="tambahCart.php?idMenu=<?php echo $data['menu_id'];?>" class="btn btn-warning">Pesan</a>
               </div>
             </div>
           </div>
@@ -131,7 +131,7 @@ while($data = mysqli_fetch_assoc($result2)){
             <div class="card-body">
               <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name'];?></h5>
               <p class="card-text"><?php echo "Rp." . number_format($harga, 0);?></p>
-              <a href="tambahCart.php?id=<?php echo $data['menu_id']?>" class="btn btn-warning">Pesan</a>
+              <a href="tambahCart.php?idMenu=<?php echo $data['menu_id']?>" class="btn btn-warning">Pesan</a>
             </div>
           </div>
         </div>
