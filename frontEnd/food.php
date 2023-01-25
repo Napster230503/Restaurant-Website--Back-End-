@@ -110,24 +110,32 @@ while($data = mysqli_fetch_assoc($result2)){
             <div class="card" style="width: 18rem">
               <img src="IMG/Mie_Aceh.jpg" class="card-img-top" alt="mie A A A Aceh" />
               <div class="card-body">
-                <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name']?></h5>
-                <p class="card-text"><?php echo "Rp." . number_format($harga,0)?></p>
-                <a href="tambahCart.php?id=<?php echo $data['menu_id']?>" class="btn btn-warning">Pesan</a>
+                <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name'];?></h5>
+                <p class="card-text"><?php echo "Rp." . number_format($harga,0);?></p>
+                <a href="tambahCart.php?id=<?php echo $data['menu_id'];?>" class="btn btn-warning">Pesan</a>
               </div>
             </div>
           </div>
         <?php endwhile; ?>
         
+        <?php
+           $database = db_connect ();
+
+           $no = 1;
+           $tampil = mysqli_query($database, 'SELECT * FROM menu WHERE menu_id = "F03"');
+           while($data = mysqli_fetch_assoc($tampil)) :   
+        ?>
         <div class="col-sm mb-5 ms-5">
           <div class="card" style="width: 18rem">
             <img src="IMG/soto.jpg" class="card-img-top" alt="soto" />
             <div class="card-body">
-              <h5 class="card-title" style="color: #f48901">Soto</h5>
-              <p class="card-text">Rp 20.000</p>
-              <a href="payment3.html" class="btn btn-warning">Pesan</a>
+              <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name'];?></h5>
+              <p class="card-text"><?php echo "Rp." . number_format($harga, 0);?></p>
+              <a href="tambahCart.php?id=<?php echo $data['menu_id']?>" class="btn btn-warning">Pesan</a>
             </div>
           </div>
         </div>
+        <?php endwhile; ?>
 
         <div class="col-sm mb-5 ms-5">
           <div class="card" style="width: 18rem">

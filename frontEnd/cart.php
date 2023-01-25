@@ -140,21 +140,22 @@ while($data = mysqli_fetch_assoc($result2)){
                 <?php
                     $grandTotal = 0;
                     $no = 1;
+
                     foreach($_SESSION["cart"] as $cart => $val){
                         $subtotal = $val["harga"] * $val["jumlah"];
                 ?>
                     <tr>
-                        <td><?= $no++;?></td>
+                        <td><?= $no;?></td>
                         <td><?php echo $val["nama"];?></td>
                         <td><?php echo $val["harga"];?></td>
-                        <td><?php echo $val["jumlah"];?> pcs</td>
+                        <td><?php echo $val["jumlah"];?> porsi</td>
                         <td><?php echo $subtotal;?></td>
                         <td>
-                            <a href="hapusCart.php?idProduk=<?php echo $menuId?>">Batal</a>
+                            <a href="hapusCart.php?idProduk=<?php echo $cart?>">Batal</a>
                         </td>
                     </tr>
                 <?php
-
+                        $no++;
                         $grandTotal += $subtotal;
                     }
                 ?>
@@ -167,7 +168,7 @@ while($data = mysqli_fetch_assoc($result2)){
         <a href="tambahTransaksi.php" class="btn btn-warning">Beli</a>
     <?php
         }else{
-            echo "<p class='text-center'>belum ada produk di shop cart</p>";
+            echo "<p class='text-center'>belum ada pesanan di shop cart</p>";
         }
     ?>
 </div>
