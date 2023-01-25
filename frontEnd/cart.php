@@ -114,14 +114,20 @@ while($data = mysqli_fetch_assoc($result2)){
 ?>
 <body>
 
+  <div class="container mt-5" style="width:500px">
+  <div class="row mx-auto">
+  <div class="col-md-6">
+  <div class="card " style="width: 30rem;">
+
+<div class="card-body">
     <a href="food.php">beli produk</a>
 
-    <h1>Cart saya</h1>
+    <h1 class="mt-5 text-center mb-5">Cart saya</h1>
 
     <?php
         if(!empty($_SESSION["cart"])){
     ?>  
-        <table border="1">
+        <table class="table table-hover">
             <tr>
                 <th>No.</th>
                 <th>Nama</th>
@@ -158,12 +164,19 @@ while($data = mysqli_fetch_assoc($result2)){
                 <th><?php echo number_format($grandTotal,0)?> </th>
             </tr>
         </table>
-        <a href="tambahTransaksi.php">Beli</a>
+        <a href="tambahTransaksi.php" class="btn btn-warning">Beli</a>
     <?php
         }else{
-            echo "belum ada produk di shop cart";
+            echo "<p class='text-center'>belum ada produk di shop cart</p>";
         }
     ?>
+</div>
+</div>
+  </div>
+</div>
+  </div>
+
+  
 </body>
 </html>
 
