@@ -101,7 +101,6 @@ if(!isset($_SESSION['masuk'])){
                         <a href="show.php?id=<?php echo $data['emp_id']; ?>"><i class="fa fa-eye me-3"></i></a>
                         <a href="update.php?id=<?php echo $data['emp_id']; ?>" class='btn btn-primary'>Update</a>
                         <a href="delete.php?id=<?php echo $data['emp_id']; ?>" class='btn btn-danger'>Delete</a>
-
                       </td>
                     </tr>
                     <?php endwhile; ?>
