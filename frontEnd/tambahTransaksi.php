@@ -8,12 +8,12 @@
     // $koneksi;
     $con = db_connect();
     $orderid = 'O'.time();
-    $custid = 'cust'.time();//'SELECT cust_id FROM customer where cust_name = "Online"' ;
-    $empid = 'emp'.time();//'SELECT emp_id FROM employee WHERE emp_name = "Online"' ;
+    $cust = 'cust'.time();//'SELECT cust_id FROM customer where cust_name = "Online"' ;
+    $emp = 'emp'.time();//'SELECT emp_id FROM employee WHERE emp_name = "Online"' ;
     // echo $orderid;
     // echo $custid;
     // echo $empid;
-    $sql = "INSERT INTO orders (order_id, cust_id, emp_id) values ('".$orderid."', '".$custid."', '".$empid."')";
+    $sql = "INSERT INTO orders (order_id, cust_id, emp_id) values ('".$orderid."', '".$cust."', '".$emp."')";
     $query = mysqli_query($con, $sql);
 
     // menambahkan id terakhir
