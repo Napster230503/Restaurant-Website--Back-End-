@@ -8,43 +8,20 @@
     // $koneksi;
     $con = db_connect();
     $orderid = 'O'.time();
-<<<<<<< HEAD
-    $cust = 'cust000006'; //"SELECT cust_id FROM customer WHERE cust_name = 'Online'";
-    $emp = 'emp0000006';//"SELECT emp_id FROM employee WHERE emp_name = 'Online'";
-    // $hasilCust = mysqli_query($con, $cust);
-    // $hasilEmp = mysqli_query($con, $emp);
-   
-    // while($rowCust = mysqli_fetch_assoc($hasilCust)){
-    //     $rowCust['cust_id'];
-    //     echo $rowCust;
-    //     var_dump($rowCust);
-    // }
-
-    // while($rowEmp = mysqli_fetch_assoc($hasilEmp)){
-    //     $rowEmp['emp_id'];
-    //     echo $rowEmp;
-    //     var_dump($rowEmp);
-    // }
-
-    
-    
-    // while($rowCust = mysqli_fetch_assoc($hasilCust)){
-    //     $rowCust['cust_id'];
-    // }
-    // while($rowEmp = mysqli_fetch_assoc($hasilEmp)){
-    //     $rowEmp['emp_id'];
-    // }
-    // echo $orderid;
-    // echo $hasilCust;
-    // echo $hasilEmp;
-    
-=======
-    $cust = 'cust'.time();//'SELECT cust_id FROM customer where cust_name = "Online"' ;
-    $emp = 'emp'.time();//'SELECT emp_id FROM employee WHERE emp_name = "Online"' ;
+    $cust = 'cust000007';     //'SELECT cust_id FROM customer where cust_name = "Online"' ;
+    $emp = 'emp0000007';     //'SELECT emp_id FROM employee WHERE emp_name = "Online"' ;
     // echo $orderid;
     // echo $custid;
     // echo $empid;
->>>>>>> 188519e8409bec701e15169712a5e4b4e58a9084
+    // $hasil = mysqli_query($con,$cust);
+    // $hasil2 = mysqli_query($con, $emp);
+
+    // while($result = mysqli_fetch_assoc($hasil)){
+    //     $custId = $result['cust_id'];
+    // }
+    // while($result2 = mysqli_fetch_assoc($hasil)){
+    //     $empId = $result['emp_id'];
+    // }
     $sql = "INSERT INTO orders (order_id, cust_id, emp_id) values ('".$orderid."', '".$cust."', '".$emp."')";
     $query = mysqli_query($con, $sql);
 
