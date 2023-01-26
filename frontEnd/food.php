@@ -126,7 +126,7 @@ while($data = mysqli_fetch_assoc($result2)){
               <img src="IMG/Mie_Aceh.jpg" class="card-img-top" alt="mie A A A Aceh" />
               <div class="card-body">
                 <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name'];?></h5>
-                <p class="card-text"><?php echo "Rp." . number_format($harga,0);?></p>
+                <p class="card-text"><?php echo "Rp." . number_format($data['price'],0);?></p>
                 <form action="tambahCart.php" method="post">
                   <input type="hidden" id="idMenu" name="idMenu" value="<?php echo $data['menu_id']?>"/>
                   <input type="number" name="qty" id="qty" style="width: 50px;">
@@ -149,7 +149,7 @@ while($data = mysqli_fetch_assoc($result2)){
             <img src="IMG/soto.jpg" class="card-img-top" alt="soto" />
             <div class="card-body">
               <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name'];?></h5>
-              <p class="card-text"><?php echo "Rp." . number_format($harga, 0);?></p>
+              <p class="card-text"><?php echo "Rp." . number_format($data['price'], 0);?></p>
               <form action="tambahCart.php" method="post">
                   <input type="hidden" id="idMenu" name="idMenu" value="<?php echo $data['menu_id']?>"/>
                   <input type="number" name="qty" id="qty" style="width: 50px;">
@@ -161,38 +161,76 @@ while($data = mysqli_fetch_assoc($result2)){
         </div>
         <?php endwhile; ?>
 
+
+        <?php
+           $database = db_connect ();
+
+          //  $no = 1;
+           $tampil = mysqli_query($database, 'SELECT * FROM menu WHERE menu_id = "F04"');
+           while($data = mysqli_fetch_assoc($tampil)) :   
+        ?>
         <div class="col-sm mb-5 ms-5">
           <div class="card" style="width: 18rem">
             <img src="IMG/tempe.jpg" class="card-img-top" alt="tempe" />
             <div class="card-body">
-              <h5 class="card-title" style="color: #f48901">Tempe penyet</h5>
-              <p class="card-text">Rp 15.000</p>
-              <a href="payment4.html" class="btn btn-warning">Pesan</a>
+              <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name'];?></h5>
+              <p class="card-text"><?php echo "Rp." . number_format($data['price'], 0);?></p>
+              <form action="tambahCart.php" method="post">
+                  <input type="hidden" id="idMenu" name="idMenu" value="<?php echo $data['menu_id']?>"/>
+                  <input type="number" name="qty" id="qty" style="width: 50px;">
+                  <input type="submit" value="Pesan" class="btn btn-warning"/>
+                </form>
             </div>
           </div>
         </div>
+    <?php endwhile; ?>
 
+    <?php
+           $database = db_connect ();
+
+          //  $no = 1;
+           $tampil = mysqli_query($database, 'SELECT * FROM menu WHERE menu_id = "F05"');
+           while($data = mysqli_fetch_assoc($tampil)) :   
+        ?>
         <div class="col-sm mb-5 ms-5">
           <div class="card" style="width: 18rem">
             <img src="IMG/spageti.jpg" class="card-img-top" alt="spagetti" />
             <div class="card-body">
-              <h5 class="card-title" style="color: #f48901">Spagetti</h5>
-              <p class="card-text">Rp 30.000</p>
-              <a href="payment5.html" class="btn btn-warning">Pesan</a>
+              <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name'];?></h5>
+              <p class="card-text"><?php echo "Rp." . number_format($data['price'], 0);?></p>
+              <form action="tambahCart.php" method="post">
+                  <input type="hidden" id="idMenu" name="idMenu" value="<?php echo $data['menu_id']?>"/>
+                  <input type="number" name="qty" id="qty" style="width: 50px;">
+                  <input type="submit" value="Pesan" class="btn btn-warning"/>
+                </form>
             </div>
           </div>
         </div>
+        <?php endwhile; ?>
 
+
+        <?php
+           $database = db_connect ();
+
+          //  $no = 1;
+           $tampil = mysqli_query($database, 'SELECT * FROM menu WHERE menu_id = "F06 "');
+           while($data = mysqli_fetch_assoc($tampil)) :   
+        ?>
         <div class="col-sm mb-5 ms-5">
           <div class="card" style="width: 18rem">
             <img src="IMG/pasta.jpg" class="card-img-top" alt="pasta" />
             <div class="card-body">
-              <h5 class="card-title" style="color: #f48901">Pasta</h5>
-              <p class="card-text">Rp 26.000</p>
-              <a href="payment6.html" class="btn btn-warning">Pesan</a>
+              <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name'];?></h5>
+              <p class="card-text"><?php echo "Rp." . number_format($harga, 0);?></p></p>
+              <form action="tambahCart.php" method="post">
+                  <input type="hidden" id="idMenu" name="idMenu" value="<?php echo $data['menu_id']?>"/>
+                  <input type="number" name="qty" id="qty" style="width: 50px;">
+                  <input type="submit" value="Pesan" class="btn btn-warning"/>
+                </form>
             </div>
           </div>
         </div>
+        <?php endwhile; ?>
       </div>
     </div>
 
