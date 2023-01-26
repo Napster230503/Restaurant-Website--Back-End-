@@ -100,9 +100,6 @@ if(!isset($_SESSION['masuk'])){
                         <a href="deleteOrder.php?id=<?php echo $data['order_id']?>" class='btn btn-danger'>Delete</a>
                         </td>
                       <td>
-
-                       
-
                       </td>
                     </tr>
                     <?php endwhile; ?>
