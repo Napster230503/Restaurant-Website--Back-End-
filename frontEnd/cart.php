@@ -151,6 +151,7 @@ while($data = mysqli_fetch_assoc($result2)){
                         <td><?php echo $val["jumlah"];?> porsi</td>
                         <td><?php echo $subtotal;?></td>
                         <td>
+
                             <a class="btn btn-danger" href="hapusCart.php?idMenu=<?php echo $cart?>">Batal</a>
                         </td>
                     </tr>
@@ -165,7 +166,7 @@ while($data = mysqli_fetch_assoc($result2)){
                 <th><?php echo number_format($grandTotal,0)?> </th>
             </tr>
         </table>
-        <a href="tambahTransaksi.php" class="btn btn-warning">Beli</a>
+        <a href="#" class="btn btn-warning" onclick="tombol()">Beli</a>
     <?php
         }else{
             echo "<p class='text-center'>belum ada pesanan di shop cart</p>";
@@ -203,6 +204,26 @@ while($data = mysqli_fetch_assoc($result2)){
         });
       });
     </script>
+
+  
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+      import swal from 'sweetalert';
+    </script>
+
+  <script type="text/javascript">
+      function tombol() {
+        swal({
+          title: 'Your Transaction Is Success',
+          text: 'Please Wait For Your Order :) ',
+          icon: 'success',
+          button: true,
+        }).then(function () {
+          window.location = 'food.php';
+        });
+      }
+    </script>
+
 
 
 
