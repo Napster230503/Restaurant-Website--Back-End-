@@ -100,6 +100,7 @@ while($data = mysqli_fetch_assoc($result2)){
             <div class="card-body">
               <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name'];?></h5>
               <p class="card-text"><?php echo "Rp." . number_format($data['price'],0);?></p>
+              <input type="number" name="qty" id="qty" style="width: 50px;">
               <a href="tambahCart.php?idMenu=<?php echo $data['menu_id']?>" class="btn btn-warning">Pesan</a>
             </div>
           </div>
@@ -121,6 +122,7 @@ while($data = mysqli_fetch_assoc($result2)){
               <div class="card-body">
                 <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name'];?></h5>
                 <p class="card-text"><?php echo "Rp." . number_format($harga,0);?></p>
+                <input type="number" name="qty" id="qty" style="width: 50px;">
                 <a href="tambahCart.php?idMenu=<?php echo $data['menu_id'];?>" class="btn btn-warning">Pesan</a>
               </div>
             </div>
@@ -140,6 +142,7 @@ while($data = mysqli_fetch_assoc($result2)){
             <div class="card-body">
               <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name'];?></h5>
               <p class="card-text"><?php echo "Rp." . number_format($harga, 0);?></p>
+              <input type="number" name="qty" id="qty" style="width: 50px;">
               <a href="tambahCart.php?idMenu=<?php echo $data['menu_id']?>" class="btn btn-warning">Pesan</a>
             </div>
           </div>
