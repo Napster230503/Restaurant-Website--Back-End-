@@ -1,6 +1,6 @@
 <?php
 session_start();
-function db_connect () {
+function db_connect() {
     $con = mysqli_connect('localhost', 'root', '', 'fs_resto');
     if (!$con){
         die("Tidak dapat membuat koneksi dengan database!");

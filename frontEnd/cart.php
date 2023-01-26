@@ -166,7 +166,7 @@ while($data = mysqli_fetch_assoc($result2)){
                 <th><?php echo number_format($grandTotal,0)?> </th>
             </tr>
         </table>
-        <a href="#" class="btn btn-warning" onclick="tombol()">Beli</a>
+        <a href="tambahTransaksi.php" class="btn btn-warning" onclick="tombol()">Beli</a>
     <?php
         }else{
             echo "<p class='text-center'>belum ada pesanan di shop cart</p>";

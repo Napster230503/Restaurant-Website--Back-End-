@@ -1,7 +1,7 @@
 <?php
 require_once 'conection.php';
 
-$con = db_connect();
+$con = db_connect2();
 
 // untuk agar saat tombol dipencet di food.php sesuai dengan di database
 $code = mysqli_real_escape_string($con, $_GET["id"]);

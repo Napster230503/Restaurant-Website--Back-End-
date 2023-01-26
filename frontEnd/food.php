@@ -103,7 +103,7 @@ while($data = mysqli_fetch_assoc($result2)){
               <p class="card-text"><?php echo "Rp." . number_format($data['price'],0);?></p>
               <form action="tambahCart.php" method="post">
                   <input type="hidden" id="idMenu" name="idMenu" value="<?php echo $data['menu_id']?>"/>
-                  <input type="number" name="qty" id="qty" style="width: 50px;">
+                  <input type="number" name="qty" id="qty" style="width: 50px;" required>
                   <input type="submit" value="Pesan" class="btn btn-warning"/>
                 </form>
               
@@ -129,7 +129,7 @@ while($data = mysqli_fetch_assoc($result2)){
                 <p class="card-text"><?php echo "Rp." . number_format($data['price'],0);?></p>
                 <form action="tambahCart.php" method="post">
                   <input type="hidden" id="idMenu" name="idMenu" value="<?php echo $data['menu_id']?>"/>
-                  <input type="number" name="qty" id="qty" style="width: 50px;">
+                  <input type="number" name="qty" id="qty" style="width: 50px;" required>
                   <input type="submit" value="Pesan" class="btn btn-warning"/>
                 </form>
               </div>
@@ -152,7 +152,7 @@ while($data = mysqli_fetch_assoc($result2)){
               <p class="card-text"><?php echo "Rp." . number_format($data['price'], 0);?></p>
               <form action="tambahCart.php" method="post">
                   <input type="hidden" id="idMenu" name="idMenu" value="<?php echo $data['menu_id']?>"/>
-                  <input type="number" name="qty" id="qty" style="width: 50px;">
+                  <input type="number" name="qty" id="qty" style="width: 50px;" required>
                   <input type="submit" value="Pesan" class="btn btn-warning"/>
                 </form>
 
@@ -177,7 +177,7 @@ while($data = mysqli_fetch_assoc($result2)){
               <p class="card-text"><?php echo "Rp." . number_format($data['price'], 0);?></p>
               <form action="tambahCart.php" method="post">
                   <input type="hidden" id="idMenu" name="idMenu" value="<?php echo $data['menu_id']?>"/>
-                  <input type="number" name="qty" id="qty" style="width: 50px;">
+                  <input type="number" name="qty" id="qty" style="width: 50px;" required>
                   <input type="submit" value="Pesan" class="btn btn-warning"/>
                 </form>
             </div>
@@ -200,7 +200,7 @@ while($data = mysqli_fetch_assoc($result2)){
               <p class="card-text"><?php echo "Rp." . number_format($data['price'], 0);?></p>
               <form action="tambahCart.php" method="post">
                   <input type="hidden" id="idMenu" name="idMenu" value="<?php echo $data['menu_id']?>"/>
-                  <input type="number" name="qty" id="qty" style="width: 50px;">
+                  <input type="number" name="qty" id="qty" style="width: 50px;" required>
                   <input type="submit" value="Pesan" class="btn btn-warning"/>
                 </form>
             </div>
@@ -224,7 +224,7 @@ while($data = mysqli_fetch_assoc($result2)){
               <p class="card-text"><?php echo "Rp." . number_format($harga, 0);?></p></p>
               <form action="tambahCart.php" method="post">
                   <input type="hidden" id="idMenu" name="idMenu" value="<?php echo $data['menu_id']?>"/>
-                  <input type="number" name="qty" id="qty" style="width: 50px;">
+                  <input type="number" name="qty" id="qty" style="width: 50px;" required>
                   <input type="submit" value="Pesan" class="btn btn-warning"/>
                 </form>
             </div>

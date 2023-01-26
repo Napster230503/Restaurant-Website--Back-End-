@@ -11,6 +11,7 @@
     // $jumlah;
     echo $qty;
     $_SESSION["cart"] [$id] = [
+        "id" => $hasil->menu_id,
         "nama" => $hasil->menu_name,
         "harga" => $hasil->price,
         "jumlah" => $qty
