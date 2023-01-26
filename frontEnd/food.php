@@ -85,23 +85,32 @@ while($data = mysqli_fetch_assoc($result2)){
     </center>
     <br /><br /><br />
 
+    <?php
+           $database = db_connect ();
+
+          //  $no = 1;
+           $tampil = mysqli_query($database, 'SELECT * FROM menu WHERE menu_id = "F01"');
+           while($data = mysqli_fetch_assoc($tampil)) :   
+        ?>
     <div class="card ms-3" style="border: 2px solid #f48901">
       <div class="row m-5 mb-4">
         <div class="col-sm mb-5 ms-5">
           <div class="card" style="width: 18rem">
             <img src="IMG/ayamGeprek.jpg" class="card-img-top" alt="ayam geprek" />
             <div class="card-body">
-              <h5 class="card-title" style="color: #f48901">Ayam geprek</h5>
-              <p class="card-text">Rp 25.000</p>
-              <a href="payment.php" class="btn btn-warning">Pesan</a>
+              <h5 class="card-title" style="color: #f48901"><?php echo $data['menu_name'];?></h5>
+              <p class="card-text"><?php echo "Rp." . number_format($data['price'],0);?></p>
+              <a href="tambahCart.php?idMenu=<?php echo $data['menu_id']?>" class="btn btn-warning">Pesan</a>
             </div>
           </div>
         </div>
+        <?php endwhile; ?>
+        
 
         <?php
            $database = db_connect ();
 
-           $no = 1;
+          //  $no = 1;
            $tampil = mysqli_query($database, 'SELECT * FROM menu WHERE menu_id = "F02"');
            while($data = mysqli_fetch_assoc($tampil)) :   
         ?>
@@ -121,7 +130,7 @@ while($data = mysqli_fetch_assoc($result2)){
         <?php
            $database = db_connect ();
 
-           $no = 1;
+          //  $no = 1;
            $tampil = mysqli_query($database, 'SELECT * FROM menu WHERE menu_id = "F03"');
            while($data = mysqli_fetch_assoc($tampil)) :   
         ?>

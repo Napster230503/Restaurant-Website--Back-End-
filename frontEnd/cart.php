@@ -120,7 +120,7 @@ while($data = mysqli_fetch_assoc($result2)){
   <div class="card " style="width: 30rem;">
 
 <div class="card-body">
-    <a href="food.php">beli produk</a>
+    <a href="food.php" class="btn btn-warning">beli produk</a>
 
     <h1 class="mt-5 text-center mb-5">Cart saya</h1>
 
@@ -151,7 +151,7 @@ while($data = mysqli_fetch_assoc($result2)){
                         <td><?php echo $val["jumlah"];?> porsi</td>
                         <td><?php echo $subtotal;?></td>
                         <td>
-                            <a href="hapusCart.php?idMenu=<?php echo $cart?>">Batal</a>
+                            <a class="btn btn-danger" href="hapusCart.php?idMenu=<?php echo $cart?>">Batal</a>
                         </td>
                     </tr>
                 <?php
