@@ -8,6 +8,7 @@
     // $koneksi;
     $con = db_connect();
     $orderid = 'O'.time();
+<<<<<<< HEAD
     $cust = 'cust000006'; //"SELECT cust_id FROM customer WHERE cust_name = 'Online'";
     $emp = 'emp0000006';//"SELECT emp_id FROM employee WHERE emp_name = 'Online'";
     // $hasilCust = mysqli_query($con, $cust);
@@ -37,6 +38,13 @@
     // echo $hasilCust;
     // echo $hasilEmp;
     
+=======
+    $cust = 'cust'.time();//'SELECT cust_id FROM customer where cust_name = "Online"' ;
+    $emp = 'emp'.time();//'SELECT emp_id FROM employee WHERE emp_name = "Online"' ;
+    // echo $orderid;
+    // echo $custid;
+    // echo $empid;
+>>>>>>> 188519e8409bec701e15169712a5e4b4e58a9084
     $sql = "INSERT INTO orders (order_id, cust_id, emp_id) values ('".$orderid."', '".$cust."', '".$emp."')";
     $query = mysqli_query($con, $sql);
 

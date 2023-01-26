@@ -1,7 +1,7 @@
 <?php
 include_once 'conection.php';
 function getkode() {
-    $con = db_connect2();
+    $con = db_connect();
     $sql = "SELECT * FROM orders";
     $result = mysqli_query($con, $sql);
 
