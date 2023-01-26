@@ -48,16 +48,16 @@ if(!isset($_SESSION['masuk'])){
           <div class="container-fluid px-4">
             <h1 class="mt-4">Information</h1>
             <?php if (!empty($_GET["error"])): ?>
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    <strong>Failed! </strong><?php echo $_GET["error"]; ?>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>    
-                            <?php endif; ?>
-                            <?php if (!empty($_GET["sukses"])): ?>
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <strong>Success! </strong><?php echo $_GET["sukses"]; ?>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>                                
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Failed! </strong><?php echo $_GET["error"]; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>    
+            <?php endif; ?>
+            <?php if (!empty($_GET["sukses"])): ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success! </strong><?php echo $_GET["sukses"]; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>                                
                             <?php endif; ?>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item active">Order</li>

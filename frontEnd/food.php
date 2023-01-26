@@ -92,6 +92,7 @@ while($data = mysqli_fetch_assoc($result2)){
            $tampil = mysqli_query($database, 'SELECT * FROM menu WHERE menu_id = "F01"');
            while($data = mysqli_fetch_assoc($tampil)) :   
         ?>
+        
     <div class="card ms-3" style="border: 2px solid #f48901">
       <div class="row m-5 mb-4">
         <div class="col-sm mb-5 ms-5">

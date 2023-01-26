@@ -12,7 +12,7 @@
     $_SESSION["cart"] [$id] = [
         "nama" => $hasil->menu_name,
         "harga" => $hasil->price,
-        "jumlah" => 1
+        "jumlah" => 2
     ];
 
 

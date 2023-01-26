@@ -15,7 +15,8 @@ if(!isset($_SESSION['masuk'])){
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Dashboard - FS Resto</title>
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
     <link href="../../resource/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
   </head>
@@ -71,7 +72,7 @@ if(!isset($_SESSION['masuk'])){
               </div>
 
               <div class="card-body">
-                <table id="datatablesSimple">
+                <table id="example" class="table table-striped" style="width:100%">
                   <thead>
                     <tr>
                       <th>No</th>
@@ -122,6 +123,14 @@ if(!isset($_SESSION['masuk'])){
     ?>
   </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable();
+});
+</script>
 <?php
 db_disconnect($database);
 
