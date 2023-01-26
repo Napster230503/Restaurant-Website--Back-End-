@@ -8,12 +8,36 @@
     // $koneksi;
     $con = db_connect();
     $orderid = 'O'.time();
-    $custid = 'cust'.time();//'SELECT cust_id FROM customer where cust_name = "Online"' ;
-    $empid = 'emp'.time();//'SELECT emp_id FROM employee WHERE emp_name = "Online"' ;
+    $cust = 'cust000006'; //"SELECT cust_id FROM customer WHERE cust_name = 'Online'";
+    $emp = 'emp0000006';//"SELECT emp_id FROM employee WHERE emp_name = 'Online'";
+    // $hasilCust = mysqli_query($con, $cust);
+    // $hasilEmp = mysqli_query($con, $emp);
+   
+    // while($rowCust = mysqli_fetch_assoc($hasilCust)){
+    //     $rowCust['cust_id'];
+    //     echo $rowCust;
+    //     var_dump($rowCust);
+    // }
+
+    // while($rowEmp = mysqli_fetch_assoc($hasilEmp)){
+    //     $rowEmp['emp_id'];
+    //     echo $rowEmp;
+    //     var_dump($rowEmp);
+    // }
+
+    
+    
+    // while($rowCust = mysqli_fetch_assoc($hasilCust)){
+    //     $rowCust['cust_id'];
+    // }
+    // while($rowEmp = mysqli_fetch_assoc($hasilEmp)){
+    //     $rowEmp['emp_id'];
+    // }
     // echo $orderid;
-    // echo $custid;
-    // echo $empid;
-    $sql = "INSERT INTO orders (order_id, cust_id, emp_id) values ('".$orderid."', '".$custid."', '".$empid."')";
+    // echo $hasilCust;
+    // echo $hasilEmp;
+    
+    $sql = "INSERT INTO orders (order_id, cust_id, emp_id) values ('".$orderid."', '".$cust."', '".$emp."')";
     $query = mysqli_query($con, $sql);
 
     // menambahkan id terakhir
