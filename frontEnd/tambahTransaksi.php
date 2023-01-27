@@ -8,8 +8,8 @@
     // $koneksi;
     $con = db_connect();
     $orderid = 'O'.time();
-    $cust = 'cust000008';     //'SELECT cust_id FROM customer where cust_name = "Online"' ;
-    $emp = 'emp0000008';     //'SELECT emp_id FROM employee WHERE emp_name = "Online"' ;
+    $cust = 'cust000007';     //'SELECT cust_id FROM customer where cust_name = "Online"' ;
+    $emp = 'emp0000007';     //'SELECT emp_id FROM employee WHERE emp_name = "Online"' ;
     // echo $orderid;
     // echo $custid;
     // echo $empid;
