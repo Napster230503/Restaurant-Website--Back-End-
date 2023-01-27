@@ -3,7 +3,7 @@ require_once "../conection.php";
 $con = db_connect();
 $kode = mysqli_real_escape_string($con, $_GET["id"]);
 $sql = "SELECT * FROM order_detail WHERE order_id = '$kode'";
-$sql3 = "SELECT * FROM order_detail JOIN orders ON order_detail.order_id = orders.order_id JOIN menu ON order_detail.menu_id = menu.menu_id";
+$sql3 = "SELECT * FROM order_detail JOIN orders ON order_detail.order_id = orders.order_id JOIN menu ON order_detail.menu_id = menu.menu_id limit 1";
 $result = mysqli_query($con, $sql);
 $result3 = mysqli_query($con, $sql3);
 
